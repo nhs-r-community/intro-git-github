@@ -1,0 +1,106 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Introduction"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Starting Git from an existing project
+
+To make our project a Git repository, or 'repo' on our local machine we use 
+
+```{r}
+usethis::use_git()
+```
+
+## Verbose feedback
+
+```{r}
+√ Initialising Git repo
+√ Adding '.Rdata', '.httr-oauth', '.DS_Store' to '.gitignore'
+There are 2 uncommitted files:
+• '.gitignore'
+• 'myRepo.Rproj'
+Is it ok to commit them?
+
+1: Yeah
+2: Absolutely not
+3: No
+```
+
+Choose the Yes option
+
+## Next step
+
+```{r}
+√ Adding files
+√ Commit with message 'Initial commit'
+• A restart of RStudio is required to activate the Git pane
+Restart now?
+
+1: Nope
+2: Definitely
+3: No
+```
+
+Choose the Yes option
+
+## Use GitHub
+
+To create a copy on GitHub we use `usethis::use_github()`
+
+This takes a local project, creates an associated repo on GitHub, adds it to your local repo as the "origin remote", and makes an initial "push" to synchronize.
+
+## Use GitHub
+
+Copy your local repo to GitHub
+
+```{r}
+usethis::use_github()
+```
+
+## Use GitHub
+
+If you get this:
+
+```{r}
+✔ Checking that current branch is 'main'
+Which git protocol to use? (enter 0 to exit) 
+1: ssh   <-- presumes that you have set up ssh keys
+2: https <-- choose this if you don't have ssh keys (or don't know if you do)
+```
+
+Choose 2 at the moment.
+
+## Use GitHub
+
+```{r}
+i Defaulting to 'https' Git protocol
+√ Creating GitHub repository
+√ Setting remote 'origin' to 'https://github.com/3mmaRand/mypackage.git'
+√ Adding GitHub links to DESCRIPTION
+√ Setting URL field in DESCRIPTION to 'https://github.com/3mmaRand/mypackage'
+√ Setting BugReports field in DESCRIPTION to 'https://github.com/3mmaRand/mypackage/issues'
+√ Pushing 'master' branch to GitHub and setting remote tracking branch
+√ Opening URL 'https://github.com/3mmaRand/mypackage'
+```
+
+# Acknowledgements
+
+These slides were designed by Mine Çetinkaya-Rundel and Emma Rand for the Forwards Package development module course
+
+[Your first package](https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/your-first-package.html#1) and
+[Setting up your system](https://forwards.github.io/workshops/package-dev-modules/slides/02-setting-up-system/setting-up-system.html#1)

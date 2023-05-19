@@ -1,0 +1,172 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Introduction"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Check Git
+
+Check if Git is already installed. Run the following in the *Terminal* (not the RStudio Console!)
+
+```{bash}
+which git
+```
+
+Check the version of your Git
+
+```{bash}
+git --version
+```
+
+tip
+If asked to install the Xcode command line tools, say yes!
+Right click to copy on a Terminal line
+
+## Install Git
+
+If `which git` didn't find Git installed, and if you weren't prompted to install it, run the following in the *Terminal*
+
+```{bash}
+xcode-select --install
+```
+
+## GitHub
+
+to-do
+Register a GitHub account at [github.com](https://github.com/).
+
+- Incorporate your actual name!
+- Reuse your username from other contexts (like Social Media).
+- Pick a username you will be comfortable revealing to your future boss.
+- Shorter is better than longer.
+- Be as unique as possible in as few characters as possible.
+- Make it timeless. 
+- Avoid words laden with special meaning in programming.
+- Use all lower case letters.
+- Set up [2FA (two-factor authentication)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication) using an app or save the generated code.
+
+## Configure Git
+
+Configure `user.name` and `user.email`.
+
+```{r}
+library(usethis)
+usethis::use_git_config(
+  user.name = "github_name",       # Make sure this matches your GitHub account
+  user.email = "jane@example.com"  # Use the email associated with GitHub account
+  )
+```
+
+## Check Git configuration
+
+Ask for a **sit**uation **rep**ort.
+
+```{r}
+usethis::git_sitrep()
+```
+
+A lot of information will appear in the RStudio Console!
+
+## Vaccinate
+
+```{r}
+usethis::git_vaccinate()
+```
+
+>Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it's missing from your global Git config.
+
+## Personal access token
+
+- Communicating with GitHub will require authentication
+
+- Instead of typing in your username and password each time, use a **PAT** (personal access token)
+
+## TODO
+
+[TODO] Add slides incorporating information from blog https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/
+
+## Create a PAT
+
+- Create a PAT
+- Give the token a descriptive name
+- Copy and also store this token somewhere (you won't be able to see it again!)
+
+```{r}
+usethis::create_github_token()
+```
+
+## Store your PAT
+
+Put your PAT into the Git credential store
+
+```{r}
+gitcreds::gitcreds_set()
+```
+
+tip
+You may need to install **gitcreds** with `install.packages("gitcreds")`.
+
+## Check Git
+
+Check if Git is already installed. Run the following in the *Terminal*.
+- Check if Git is installed
+
+```{bash}
+where git
+```
+
+- Check the version of your Git
+
+```{bash}
+git --version
+```
+
+## Installing Git
+
+Download the installer from https://git-scm.com/downloads 
+
+Run keeping all the default settings. 
+
+If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press Ctrl + Alt + Delete; select Task Manager; find Git for Windows installer and close).
+
+## Installing Git
+
+Open RStudio. In the menus go to Tools > Global Options > Git/SVN. 
+
+Check RStudio has found git under "Git executable:" 
+
+You may need to click Browse and find the git executable.
+
+It may be under C:\Users\username\AppData\Local\Programs\Git\ - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git.
+
+## RStudio Git pane
+
+```{r echo = FALSE, out.width = "80%", fig.alt = "RStudio Git pane screenshot"}
+knitr::include_graphics("images/rstudio-git-pane.png")
+```
+
+???
+
+When working in an RStudio project that is Git tracked, you can use the Git pane in RStudio to commit, pull, push, etc., i.e. to communicate with GitHub.
+
+
+# Acknowledgements
+
+These slides were designed by Mine Çetinkaya-Rundel and Emma Rand for the Forwards Package development module course
+
+[Your first package](https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/your-first-package.html#1) and
+[Setting up your system](https://forwards.github.io/workshops/package-dev-modules/slides/02-setting-up-system/setting-up-system.html#1)
