@@ -1,0 +1,94 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - What is version control?"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Git - the version control system
+
+> “Track Changes” features from Microsoft Word on steroids
+
+Source: [Happy Git and GitHub for the useR](https://happygitwithr.com/big-picture.html?q=version%20control#big-picture) by Jenny Bryan
+
+## Managing your files
+
+::: {.fragment .fade-in}
+file_v1.0.doc
+:::
+::: {.fragment .fade-in}
+file_v1.1.doc
+:::
+::: {.fragment .fade-in}
+file_v1.0.1.doc
+:::
+::: {.fragment .fade-in}
+file_final_1.0.doc
+:::
+::: {.fragment .fade-in}
+file_final_final.doc
+:::
+
+Inspired by comic cartoons like [xkcd](https://xkcd.com/1459/)
+
+## Git benefits
+
+Git may not really make sense if you are working on your own
+
+>A solo data analyst, working on a single computer, will benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of your files, if that’s all you’re worried about.
+
+[Happy Git and GitHub for the userR](https://happygitwithr.com/big-picture.html) - Jenny Bryan
+
+* Are important if you want to share/communicate with others
+* Are paramount if you want to collaborate
+
+## GitHub
+
+Uses Git but is a separate platform (other services are available)
+
+Like RStudio which encompasses R
+
+::: {.fragment .fade-in}
+GitHub encompasses Git
+:::
+
+## RStudio
+
+As with so many things, other IDEs (Integrated development environment) are available
+
+::: {.fragment .fade-in}
+The benefits of RStudio are never having to leave one program to clean data, visualise it and do statistics
+:::
+::: {.fragment .fade-in}
+RStudio also allows version control and collaboration without having to open another program
+:::
+
+## R/RStudio things that are needed
+
+::: incremental
+- A folder for the work
+- [Set up a project](https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide) so there is a `.Rproj` bookmark in the folder
+- Set up Git and GitHub
+
+:::
+
+## End session
+
+## Acknowledgements
+
+[Happy Git and GitHub](https://happygitwithr.com/) for the useR by Jenny Bryan
+
+Material adapted from the [Git training](https://github.com/nhs-r-community/git_training/blob/main/guides/workshop_slides/Part%201-Intro%20to%20Git-Version%20Control.pdf) delivered at the NHS-R Community conference 2022.
