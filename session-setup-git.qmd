@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - Introduction"
+subtitle: "Session - Getting started with Git"
 author: "Zoë Turner"
 format:
   revealjs:
@@ -36,13 +36,22 @@ tip
 If asked to install the Xcode command line tools, say yes!
 Right click to copy on a Terminal line
 
-## Install Git
+## Downloading Git
 
-If `which git` didn't find Git installed, and if you weren't prompted to install it, run the following in the *Terminal*
+Download the installer from https://git-scm.com/downloads 
+Run keeping all the default settings. 
 
-```{bash}
-xcode-select --install
-```
+If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press `Ctrl + Alt + Delete`; select Task Manager; find Git for Windows installer and close).
+
+## Installing Git
+
+Open RStudio. In the menus go to Tools > Global Options > Git/SVN. 
+
+Check RStudio has found git under "Git executable:" 
+
+You may need to click Browse and find the git executable.
+
+It may be under C:\Users\username\AppData\Local\Programs\Git\ - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git.
 
 ## GitHub
 
@@ -95,19 +104,18 @@ usethis::git_vaccinate()
 
 - Instead of typing in your username and password each time, use a **PAT** (personal access token)
 
-## TODO
-
-[TODO] Add slides incorporating information from blog https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/
-
 ## Create a PAT
 
 - Create a PAT
-- Give the token a descriptive name
+- Give the token a descriptive name like `connect-posit-github`
+- Untick blue ticks (because this is on the cloud)
 - Copy and also store this token somewhere (you won't be able to see it again!)
 
 ```{r}
 usethis::create_github_token()
 ```
+
+To amend/delete existing tokens go to: https://github.com/settings/tokens
 
 ## Store your PAT
 
@@ -135,24 +143,6 @@ where git
 git --version
 ```
 
-## Installing Git
-
-Download the installer from https://git-scm.com/downloads 
-
-Run keeping all the default settings. 
-
-If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press Ctrl + Alt + Delete; select Task Manager; find Git for Windows installer and close).
-
-## Installing Git
-
-Open RStudio. In the menus go to Tools > Global Options > Git/SVN. 
-
-Check RStudio has found git under "Git executable:" 
-
-You may need to click Browse and find the git executable.
-
-It may be under C:\Users\username\AppData\Local\Programs\Git\ - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git.
-
 ## RStudio Git pane
 
 ```{r echo = FALSE, out.width = "80%", fig.alt = "RStudio Git pane screenshot"}
@@ -163,6 +153,7 @@ knitr::include_graphics("images/rstudio-git-pane.png")
 
 When working in an RStudio project that is Git tracked, you can use the Git pane in RStudio to commit, pull, push, etc., i.e. to communicate with GitHub.
 
+## End session
 
 # Acknowledgements
 
@@ -170,3 +161,5 @@ These slides were designed by Mine Çetinkaya-Rundel and Emma Rand for the Forwa
 
 [Your first package](https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/your-first-package.html#1) and
 [Setting up your system](https://forwards.github.io/workshops/package-dev-modules/slides/02-setting-up-system/setting-up-system.html#1)
+
+CDU Data Science [Personal Access Tokens blog](https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/)

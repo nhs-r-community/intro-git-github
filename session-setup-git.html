@@ -1209,7 +1209,7 @@ margin-right: 0; }
 
 <section id="title-slide" data-background-color="#43464B" class="quarto-title-block center">
   <h1 class="title">Introduction to Git and GitHub</h1>
-  <p class="subtitle">Session - Introduction</p>
+  <p class="subtitle">Session - Getting started with Git</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1232,12 +1232,17 @@ Zoë Turner
 </div>
 <p>tip If asked to install the Xcode command line tools, say yes! Right click to copy on a Terminal line</p>
 </section>
-<section id="install-git" class="slide level2">
-<h2>Install Git</h2>
-<p>If <code>which git</code> didn’t find Git installed, and if you weren’t prompted to install it, run the following in the <em>Terminal</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="downloading-git" class="slide level2">
+<h2>Downloading Git</h2>
+<p>Download the installer from https://git-scm.com/downloads Run keeping all the default settings.</p>
+<p>If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press <code>Ctrl + Alt + Delete</code>; select Task Manager; find Git for Windows installer and close).</p>
+</section>
+<section id="installing-git" class="slide level2">
+<h2>Installing Git</h2>
+<p>Open RStudio. In the menus go to Tools &gt; Global Options &gt; Git/SVN.</p>
+<p>Check RStudio has found git under “Git executable:”</p>
+<p>You may need to click Browse and find the git executable.</p>
+<p>It may be under C: - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git.</p>
 </section>
 <section id="github" class="slide level2">
 <h2>GitHub</h2>
@@ -1258,25 +1263,25 @@ Zoë Turner
 <h2>Configure Git</h2>
 <p>Configure <code>user.name</code> and <code>user.email</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">user.name =</span> <span class="st">&quot;github_name&quot;</span>,       <span class="co"># Make sure this matches your GitHub account</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.com&quot;</span>  <span class="co"># Use the email associated with GitHub account</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="at">user.name =</span> <span class="st">&quot;github_name&quot;</span>,       <span class="co"># Make sure this matches your GitHub account</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="at">user.email =</span> <span class="st">&quot;jane@example.com&quot;</span>  <span class="co"># Use the email associated with GitHub account</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="check-git-configuration" class="slide level2">
 <h2>Check Git configuration</h2>
 <p>Ask for a <strong>sit</strong>uation <strong>rep</strong>ort.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A lot of information will appear in the RStudio Console!</p>
 </section>
 <section id="vaccinate" class="slide level2">
 <h2>Vaccinate</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote>
 <p>Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it’s missing from your global Git config.</p>
@@ -1289,26 +1294,24 @@ Zoë Turner
 <li><p>Instead of typing in your username and password each time, use a <strong>PAT</strong> (personal access token)</p></li>
 </ul>
 </section>
-<section id="todo" class="slide level2">
-<h2>TODO</h2>
-<p><a href="#/todo">TODO</a> Add slides incorporating information from blog https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/</p>
-</section>
 <section id="create-a-pat" class="slide level2">
 <h2>Create a PAT</h2>
 <ul>
 <li>Create a PAT</li>
-<li>Give the token a descriptive name</li>
+<li>Give the token a descriptive name like <code>connect-posit-github</code></li>
+<li>Untick blue ticks (because this is on the cloud)</li>
 <li>Copy and also store this token somewhere (you won’t be able to see it again!)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>To amend/delete existing tokens go to: https://github.com/settings/tokens</p>
 </section>
 <section id="store-your-pat" class="slide level2">
 <h2>Store your PAT</h2>
 <p>Put your PAT into the Git credential store</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>tip You may need to install <strong>gitcreds</strong> with <code>install.packages(&quot;gitcreds&quot;)</code>.</p>
 </section>
@@ -1316,37 +1319,28 @@ Zoë Turner
 <h2>Check Git</h2>
 <p>Check if Git is already installed. Run the following in the <em>Terminal</em>. - Check if Git is installed</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">where</span> git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">where</span> git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Check the version of your Git</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="installing-git" class="slide level2">
-<h2>Installing Git</h2>
-<p>Download the installer from https://git-scm.com/downloads</p>
-<p>Run keeping all the default settings.</p>
-<p>If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press Ctrl + Alt + Delete; select Task Manager; find Git for Windows installer and close).</p>
-</section>
-<section id="installing-git-1" class="slide level2">
-<h2>Installing Git</h2>
-<p>Open RStudio. In the menus go to Tools &gt; Global Options &gt; Git/SVN.</p>
-<p>Check RStudio has found git under “Git executable:”</p>
-<p>You may need to click Browse and find the git executable.</p>
-<p>It may be under C: - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git.</p>
 </section>
 <section id="rstudio-git-pane" class="slide level2">
 <h2>RStudio Git pane</h2>
 <p>???</p>
 <p>When working in an RStudio project that is Git tracked, you can use the Git pane in RStudio to commit, pull, push, etc., i.e. to communicate with GitHub.</p>
 </section>
+<section id="end-session" class="slide level2">
+<h2>End session</h2>
+</section>
 <section id="acknowledgements" class="title-slide slide level1 center">
 <h1>Acknowledgements</h1>
 <p>These slides were designed by Mine Çetinkaya-Rundel and Emma Rand for the Forwards Package development module course</p>
 <p><a href="https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/your-first-package.html#1">Your first package</a> and <a href="https://forwards.github.io/workshops/package-dev-modules/slides/02-setting-up-system/setting-up-system.html#1">Setting up your system</a></p>
+<p>CDU Data Science <a href="https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/">Personal Access Tokens blog</a></p>
 
 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMzEyIDUyOC45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMzEyIDUyOC45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6dXJsKCNTVkdJRF8xXyk7fQoJLnN0MXtmaWxsOnVybCgjU1ZHSURfMDAwMDAxMjQ4NTc0NTU2MDM5MDA0NTE5NzAwMDAwMTQzMjgyMTU1MDk3MjE5Njg1NDRfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDEzOTI5NTUxMjc5MjM1OTI0NzczMDAwMDAwNDgzOTU0MDMyMzk0MzkxMDI3NV8pO30KCS5zdDN7ZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDU3ODY0ODAyMDAyMzM2MDUyNzAwMDAwMDA3MjMyNDE5MjUxMjUwOTkxNzQ3Xyk7fQoJLnN0NHtmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDY0NjM0NDk5ODA1MTYwMDkwNDAwMDAwMTg0MDk3Njk1ODA2MDM4NjczMTJfKTt9Cgkuc3Q1e2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDE3MzEyMDU3MDU3OTU4MzkxMDYxMDAwMDAwNjM5MjkyNDk2NDQzNDI2NTAwN18pO30KCS5zdDZ7ZmlsbDojQUZBRkFGO30KPC9zdHlsZT4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjMxMy42NTE3IiB5MT0iOTc2LjI5MiIgeDI9IjMxNC4yNjkzIiB5Mj0iOTc1LjY3NDQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoNzIxLjA5NCAwIDAgLTQ4Mi45MzcgLTIyNTM2MC4zOTA2IDQ3MTUwNS4xMjUpIj4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQ0NDRUQwIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6Izg0ODQ4QyIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDM0LjYsMzE1LjhjLTEyMywwLTIyMi43LTY2LjgtMjIyLjctMTQ5LjFjMC04Mi40LDk5LjctMTQ5LjEsMjIyLjctMTQ5LjFjMTIzLDAsMjIyLjcsNjYuOCwyMjIuNywxNDkuMQoJCUMxMjU3LjMsMjQ5LjEsMTE1Ny42LDMxNS44LDEwMzQuNiwzMTUuOHogTTEwNjguNyw3NS45Yy05My41LDAtMTY5LjMsNDUuNi0xNjkuMywxMDJzNzUuOCwxMDIsMTY5LjMsMTAyCgkJYzkzLjUsMCwxNjIuNS0zMS4yLDE2Mi41LTEwMkMxMjMxLjIsMTA3LjEsMTE2Mi4yLDc1LjksMTA2OC43LDc1Ljl6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDQ3MDQxMjEzOTIxMjE2NjU3NTUwMDAwMDE1MjAxMTI0OTc1MjMwMTY4NDU5XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMTMuODg4MiIgeTE9Ijk3Ni4zNzk0IiB4Mj0iMzE0LjUwNTciIHkyPSI5NzUuNzYxOCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzOTggMCAwIC00MDYuMTI0IC0xMjM5NDcuNDkyMiAzOTY2NTcuMDYyNSkiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDA0NzA0MTIxMzkyMTIxNjY1NzU1MDAwMDAxNTIwMTEyNDk3NTIzMDE2ODQ1OV8pOyIgZD0iTTExNTEuMSwyNDguNmMwLDAsMTMuNSw0LjEsMjEuMyw4CgkJYzIuNywxLjQsNy40LDQuMSwxMC44LDcuN2MzLjMsMy41LDQuOSw3LjEsNC45LDcuMWw1My4xLDg5LjZsLTg1LjgsMGwtNDAuMS03NS40YzAsMC04LjItMTQuMS0xMy4zLTE4LjJjLTQuMi0zLjQtNi00LjYtMTAuMi00LjYKCQljLTIuOSwwLTIwLjQsMC0yMC40LDBsMCw5OC4ybC03NiwwVjExMC4ySDExNDhjMCwwLDY5LjUsMS4zLDY5LjUsNjcuNFMxMTUxLjEsMjQ4LjYsMTE1MS4xLDI0OC42eiBNMTExOC4xLDE2NC42bC00NiwwbDAsNDIuNgoJCWw0NiwwYzAsMCwyMS4zLTAuMSwyMS4zLTIxLjdDMTEzOS40LDE2My40LDExMTguMSwxNjQuNiwxMTE4LjEsMTY0LjZ6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMTQ5MzYxNzQ1NzY4NjIwNjkwOTQwMDAwMDAzMTU5MzU0MTcxOTQwMTgzOTkzXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI1Ny43MDY4IiB5MT0iMjM0LjU1MTkiIHgyPSIyOTUuNTA2OSIgeTI9IjIzNC41NTE5Ij4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMzM2Q0IzIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzFDNURBOSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDkzNjE3NDU3Njg2MjA2OTA5NDAwMDAwMDMxNTkzNTQxNzE5NDAxODM5OTNfKTsiIGQ9Ik0yOTUuNSwzNTguNWgtNzcuN2wtODIuMy0xMjQuN3YxMjQuNwoJCUg1Ny43di0yNDhoNzcuN2w4Mi4zLDEyNi44VjExMC42aDc3LjdWMzU4LjV6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMzAuNTI1NSIgeTE9IjIzNC41NTE5IiB4Mj0iNTU5LjkyMDEiIHkyPSIyMzQuNTUxOSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2Xyk7IiBkPSJNNTU5LjksMTEwLjZ2MjQ4aC03Ny43di05Ni43aC03My45djk2LjcKCQloLTc3Ljd2LTI0OGg3Ny43djg5LjNoNzMuOXYtODkuM0g1NTkuOXoiLz4KCQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMDAwMDAwMzgzODA5Mzg5Mzk2NzU5NDQxNzAwMDAwMDUwOTg0NTgwODQ0OTk0MzA1NjBfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjU4Ny45MzQzIiB5MT0iMjMzLjY3NjQiIHgyPSI3ODYuNTA5IiB5Mj0iMjMzLjY3NjQiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDAzODM4MDkzODkzOTY3NTk0NDE3MDAwMDAwNTA5ODQ1ODA4NDQ5OTQzMDU2MF8pOyIgZD0iTTc3NS41LDMyMy45Yy03LjQsMTEuNC0xOCwyMC41LTMyLDI3LjEKCQljLTE0LDYuNy0zMC43LDEwLTUwLjEsMTBjLTI5LjcsMC01NC4xLTYuOS03My40LTIwLjhjLTE5LjMtMTMuOS0yOS43LTM0LjMtMzEuMy02MS4xaDgyLjdjMS4yLDE0LjIsNy41LDIxLjQsMTguOSwyMS40CgkJYzQsMCw3LjItMS4xLDkuNi0zLjJjMi41LTIuMSwzLjctNS4xLDMuNy05LjFjMC01LjgtMy0xMC40LTguOS0xMy44Yy02LTMuNC0xNS42LTcuMy0yOC45LTExLjdjLTE1LjYtNS4xLTI4LjctMTAuNC0zOS0xNS44CgkJYy0xMC40LTUuNC0xOS40LTEzLjMtMjcuMS0yMy44Yy03LjctMTAuNS0xMS42LTI0LjItMTEuNi00MWMwLTE2LjEsNC4xLTI5LjgsMTIuNC00MS4yYzguMy0xMS4zLDE5LjYtMTkuOSwzNC0yNS43CgkJYzE0LjQtNS44LDMwLjUtOC44LDQ4LjUtOC44YzI5LjYsMCw1My4yLDYuOSw3MC43LDIwLjdjMTcuNSwxMy44LDI3LjEsMzMuNiwyOC43LDU5LjVoLTgzLjdjLTEuMi0xMy4xLTYuNS0xOS42LTE2LjEtMTkuNgoJCWMtMy4zLDAtNiwxLTguMSwzYy0yLjEsMi0zLjIsNS0zLjIsOC45YzAsNS40LDMsOS44LDguOSwxMy4xYzYsMy40LDE1LjIsNy4zLDI3LjgsMTEuN2MxNS45LDUuNiwyOSwxMS4yLDM5LjQsMTYuNgoJCWMxMC40LDUuNSwxOS41LDEzLjUsMjcuMywyNC4yYzcuOCwxMC42LDExLjcsMjQuMiwxMS43LDQwLjhDNzg2LjUsMjk5LjYsNzgyLjgsMzEyLjQsNzc1LjUsMzIzLjl6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI4MjEuOTYwOSIgeTE9IjIzOC45MjExIiB4Mj0iOTYxLjc2MDciIHkyPSIyMzguOTIxMSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1Xyk7IiBkPSJNOTYxLjgsMjExLjV2NTQuOUg4MjJ2LTU0LjlIOTYxLjh6Ii8+CjwvZz4KPGc+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNMTM2LjIsNDIyLjFjOC4xLDYuNCwxMy41LDE1LDE2LjEsMjUuOWgtMjAuOGMtMi4yLTUuMy01LjUtOS41LTEwLTEyLjZjLTQuNS0zLjEtMTAtNC42LTE2LjMtNC42CgkJYy01LjIsMC0xMCwxLjMtMTQuMiwzLjljLTQuMiwyLjYtNy41LDYuNC05LjgsMTEuMmMtMi4zLDQuOS0zLjUsMTAuNi0zLjUsMTcuMWMwLDYuNSwxLjIsMTIuMSwzLjUsMTdjMi4zLDQuOSw1LjYsOC42LDkuOCwxMS4yCgkJYzQuMiwyLjYsOC45LDMuOSwxNC4yLDMuOWM2LjQsMCwxMS44LTEuNSwxNi4zLTQuNmM0LjUtMy4xLDcuOS03LjMsMTAtMTIuNmgyMC44Yy0yLjYsMTAuOS04LDE5LjYtMTYuMSwyNS45CgkJYy04LjEsNi40LTE4LjQsOS41LTMwLjcsOS41Yy05LjQsMC0xNy44LTIuMS0yNS02LjRjLTcuMi00LjMtMTIuOS0xMC4yLTE2LjgtMTcuOWMtNC03LjctNi0xNi40LTYtMjYuMWMwLTkuOCwyLTE4LjYsNi0yNi4yCgkJYzQtNy43LDkuNi0xMy42LDE2LjgtMTcuOWM3LjItNC4zLDE1LjYtNi40LDI1LjEtNi40QzExNy45LDQxMi42LDEyOC4xLDQxNS44LDEzNi4yLDQyMi4xeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTI4MC45LDQxOC42YzcuNSw0LjMsMTMuNSwxMC4zLDE3LjgsMThjNC4zLDcuNyw2LjUsMTYuNCw2LjUsMjYuMmMwLDkuNy0yLjIsMTguNS02LjUsMjYuMgoJCWMtNC4zLDcuOC0xMC4zLDEzLjgtMTcuOCwxOC4xYy03LjUsNC4zLTE1LjksNi41LTI1LjIsNi41Yy05LjMsMC0xNy42LTIuMS0yNS4yLTYuNWMtNy41LTQuMy0xMy41LTEwLjMtMTcuOC0xOC4xCgkJYy00LjMtNy44LTYuNS0xNi41LTYuNS0yNi4yYzAtOS43LDIuMi0xOC40LDYuNS0yNi4yYzQuMy03LjcsMTAuMy0xMy43LDE3LjgtMThjNy41LTQuMywxNS45LTYuNSwyNS4yLTYuNQoJCUMyNjUsNDEyLjIsMjczLjQsNDE0LjMsMjgwLjksNDE4LjZ6IE0yNDAuNCw0MzQuM2MtNC40LDIuNi03LjgsNi40LTEwLjMsMTEuM2MtMi41LDQuOS0zLjcsMTAuNi0zLjcsMTcuMmMwLDYuNSwxLjIsMTIuMywzLjcsMTcuMgoJCWMyLjUsNC45LDUuOSw4LjcsMTAuMywxMS4zYzQuNCwyLjYsOS41LDMuOSwxNS4zLDMuOWM1LjgsMCwxMC45LTEuMywxNS4zLTMuOWM0LjQtMi42LDcuOC02LjQsMTAuMy0xMS4zCgkJYzIuNS00LjksMy43LTEwLjYsMy43LTE3LjJjMC02LjUtMS4yLTEyLjMtMy43LTE3LjJjLTIuNS00LjktNS45LTguNy0xMC4zLTExLjNjLTQuNC0yLjYtOS41LTMuOS0xNS4zLTMuOQoJCUMyNDkuOSw0MzAuNCwyNDQuOCw0MzEuNywyNDAuNCw0MzQuM3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik00NjguOSw0MTQuN3Y5Ny45aC0xOS42di02OC4zbC0yNS4xLDY4LjNINDA3bC0yNS4xLTY4djY4aC0xOS44di05Ny45aDI0bDI5LjcsNzMuNmwyOS4yLTczLjZINDY4Ljl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNNjM1LjYsNDE0Ljd2OTcuOUg2MTZ2LTY4LjNsLTI1LjEsNjguM2gtMTcuMWwtMjUuMS02OHY2OGgtMTkuOHYtOTcuOWgyNGwyOS43LDczLjZsMjkuMi03My42SDYzNS42eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTcxNC43LDQxMy42djU4LjFjMCw3LjgsMS43LDEzLjYsNS4xLDE3LjVjMy40LDMuOSw4LjMsNS44LDE0LjgsNS44YzYuNCwwLDExLjItMS45LDE0LjctNS44CgkJYzMuNC0zLjksNS4xLTkuNyw1LjEtMTcuNXYtNTguMWgxOS42djU4LjFjMCw5LjItMS43LDE2LjktNS4xLDIzLjJjLTMuNCw2LjMtOC4xLDExLTE0LjIsMTQuMWMtNiwzLjEtMTIuOSw0LjYtMjAuNSw0LjYKCQljLTExLjksMC0yMS40LTMuNi0yOC41LTEwLjdjLTcuMS03LjEtMTAuNy0xNy41LTEwLjctMzEuM3YtNTguMUg3MTQuN3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik05MTcuNCw1MTIuNmgtMTkuOGwtNDQuMy02Ny4zdjY3LjNoLTE5Ljh2LTk5aDE5LjhsNDQuMyw2Ny45di02Ny45aDE5LjhWNTEyLjZ6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNOTk3LjIsNDEzLjZ2OTloLTE5Ljh2LTk5SDk5Ny4yeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTExMjQuNSw0MTMuNnYxNS43aC0yNy4zdjgzLjNoLTE5Ljh2LTgzLjNoLTI3LjJ2LTE1LjdIMTEyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTEyNTcuMyw0MTMuNmwtMzMuNSw2NC40djM0LjZoLTE5Ljl2LTM0LjZsLTMzLjctNjQuNGgyMi43bDIxLDQzLjNsMjEtNDMuM0gxMjU3LjN6Ii8+CjwvZz4KPC9zdmc+Cg==" class="slide-logo r-stretch"><div class="footer footer-default">
 

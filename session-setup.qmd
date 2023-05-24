@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - Introduction"
+subtitle: "Session - Setting up Git and GitHub using {usethis}"
 author: "Zoë Turner"
 format:
   revealjs:
@@ -25,6 +25,8 @@ To make our project a Git repository, or 'repo' on our local machine we use
 ```{r}
 usethis::use_git()
 ```
+
+Note that Posit Cloud workspace _is_ a project so you will see `git-project.Rproj` in the Files pane.
 
 ## Verbose feedback
 
@@ -97,6 +99,8 @@ i Defaulting to 'https' Git protocol
 √ Pushing 'master' branch to GitHub and setting remote tracking branch
 √ Opening URL 'https://github.com/3mmaRand/mypackage'
 ```
+
+## End session
 
 # Acknowledgements
 

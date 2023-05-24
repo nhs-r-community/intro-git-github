@@ -18,6 +18,17 @@ execute:
 embed-resources: true  
 ---
 
+## Opinionated Course Aims
+
+::: incremental
+-   To set up Git and GitHub using R and RStudio
+-   To practice a few workflows scenarios (but not all)
+-   To reassure that mistakes will happen and that's a feature of Git
+- [Turn around your Git mistakes in 17 ways](https://dev.to/smitterhane/turn-around-your-git-mistakes-in-17-ways-2mn1)  
+Next line has **comes with a language warning!**
+- [Oh Shit, Git!?!](https://ohshitgit.com/) 
+:::
+
 ## Agenda - session one (about 3.5 hours)
 
 Chapter overview
@@ -73,12 +84,5 @@ Chapter overview
 --------- Course end ---------
 :::
 
-## Course Aims
-
-::: incremental
--   
--   
--   
-:::
 
 ## End session
