@@ -1,0 +1,71 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Versioning workflow"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Snapshots
+
+When working it's good to practice regular saving
+
+But what if you want to take a snapshot before you do something major?
+
+::: {.fragment .fade-in}
+This is where you would **commit** file(s)
+:::
+::: {.fragment .fade-in}
+Whilst this may be something done on individual files, Git allows how project snapshots
+:::
+
+## Local and Remote
+
+Once you have a snapshot stored locally (Git) you can also **push** the snapshot to a remote site (GitHub) 
+
+This is like:
+
+::: incremental
+- sending file updates by email
+- sharing on something like DropBox
+:::
+
+## An unnecessary extra step?
+
+The tendency for much of analysis work is to share once something is finished
+
+But **commit** snapshots 
+
+::: incremental
+- allow others to contribute with your work in progress
+- helps you think clearly about code as others will see it
+- give the opportunity to **revert** back to something that was better/worked
+:::
+
+## Private or public repository?
+
+GitHub offers the possibility of having private repositories
+
+::: {.fragment .fade-in}
+They have a few restrictions on functionality (unless in a paid account)
+:::
+::: {.fragment .fade-in}
+Still should never have any identifiable information for security 
+:::
+## End session
+
+# Acknowledgements
+
+[Happy Git and GitHub](https://happygitwithr.com/) for the useR by Jenny Bryan
