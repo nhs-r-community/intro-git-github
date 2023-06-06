@@ -20,8 +20,21 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 
 [Setting up your system](http://bit.ly/pkg-dev-2) and [Your first package](http://bit.ly/pkg-dev-3) as part of the one-hour package development series.
 
+[TO DO]
+session-prework - Get set up on a computer (the Posit Cloud is preset)
 
+session-intro - What is version control?
+session-setup - Getting started with Git and GitHub
 
+session-break-slide
+
+session-version-control - What is Git/GitHub and how they relate to RStudio along with the ups and downs of Git
+session-version-workflow - Brief introduction to the Git and GitHub terminology
+
+session-usethis-gert - start work, make a commit and pull request
+session-conflict - repeat steps from previous session and create a conflict merge
+
+session-usethis-errors - typical errors from set up issues
 
 
 

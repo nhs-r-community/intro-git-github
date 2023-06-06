@@ -1,0 +1,101 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Conflicts!"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Conflicts!
+
+What happens if there are two branches being merged that have the same line of code changed?
+
+Let's create a conflict...
+
+```{r}
+usethis::pr_init("author_zoe")
+```
+
+Add to the quarto YAML `author: "Zoë Turner"` and Render
+
+```{r}
+gert::git_commit_all("Added Zoë as author")
+usethis::pr_push()
+```
+
+In GitHub create a pull request to `main` using `Merge pull request`
+In RStudio 
+
+```{r}
+usethis::pr_finish()
+```
+
+## Repeat for your name!
+
+:::incremental
+- Repeat the steps but using your name for the branch name and in the YAML.
+- We'll get conflicts! They can be resolved in GitHub which is a friendly interface
+- Or in RStudio using `usethis::pr_merge_main()`
+
+```
+✔ Pulling changes from 'origin/main'.
+Merge has resulted in merge conflict(s).
+There are 2 conflicted files:
+* 'example_quarto.html'
+* 'example_quarto.qmd'
+Are you ready to sort this out?
+If so, we will open the conflicted files for you to edit.
+
+1: Yes, I'm ready to resolve the merge conflicts.
+2: No, I want to abort this merge.
+
+Selection: 1
+Error: Please fix each conflict, save, stage, and commit.
+To back out of this merge, run `gert::git_merge_abort()` (in R) or `git merge --abort` (in the shell).
+```
+:::
+
+## Looking for the symbols
+
+To resolve the conflict we need to edit (in this case delete) one of the names from `<<<<<<<` to `>>>>>>>` 
+
+`=======` will separate the options.
+
+Also delete all the merge text:
+
+```
+<<<<<<< HEAD
+=======
+>>>>>>> 9641dcc94c1bf0005731032b040fd664f32949fc
+
+```
+Save the files 
+
+```{r}
+gert::git_add("name_of_file.qmd")
+gert::git_add("name_of_file.html")
+usethis::pr_push()
+```
+
+On GitHub there button to Merge pull request will be available as the merge conflict has been resolved
+
+Return to RStudio to use `pr_finish()` on the branch
+
+???
+`gert::git_commit_all("Chose name in conflict")` won't stage as they are not modified files 
+
+## End session
+
+

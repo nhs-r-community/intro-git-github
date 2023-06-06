@@ -85,4 +85,13 @@ Chapter overview
 :::
 
 
+
+## This is not a definitive course
+
+::: incremental
+- Like learning anything, you don't get "everything" all at once
+- There are many workflows that are possible but we can only learn a few in this workshop
+- This will get you started!
+:::
+
 ## End session

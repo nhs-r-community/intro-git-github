@@ -1144,7 +1144,7 @@ margin-right: 0; }
 
 <section id="title-slide" data-background-color="#43464B" class="quarto-title-block center">
   <h1 class="title">Introduction to Git and GitHub</h1>
-  <p class="subtitle">Session - What is version control?</p>
+  <p class="subtitle">Session - {usethis} errors</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1155,110 +1155,36 @@ Zoë Turner
 </div>
 
 </section>
-<section id="git---the-version-control-system" class="slide level2">
-<h2>Git - the version control system</h2>
-<blockquote>
-<p>“Track Changes” features from Microsoft Word on steroids</p>
-</blockquote>
-<p>Source: <a href="https://happygitwithr.com/big-picture.html?q=version%20control#big-picture">Happy Git and GitHub for the useR</a> by Jenny Bryan</p>
+<section id="any-errors" class="slide level2">
+<h2>Any errors?</h2>
+<p>If you get this:</p>
+<pre><code>✔ Setting active project to &#39;/cloud/project&#39;
+Error in `stop_bad_github_remote_config()`:
+! Unsupported GitHub remote configuration: &#39;no_github&#39;
+• Host = NA
+• origin = &lt;not configured&gt;
+• upstream = &lt;not configured&gt;
+• Neither &#39;origin&#39; nor &#39;upstream&#39; is a GitHub repo.
+
+Read more about the GitHub remote configurations that usethis supports at:
+&#39;https://happygitwithr.com/common-remote-setups.html&#39;
+Run `rlang::last_trace()` to see where the error occurred.</code></pre>
+<p>It’s because GitHub connections (including personal access tokens) haven’t been set up. The {usethis} functions won’t work though as they require a connection to GitHub</p>
+<p>You can use Git locally (F5 refresh in the Cloud).</p>
 </section>
-<section id="managing-your-files" class="slide level2">
-<h2>Managing your files</h2>
-<p>Is this familiar?</p>
-<div class="fragment fade-in">
-<p>file_v1.0.doc</p>
-</div>
-<div class="fragment fade-in">
-<p>file_v1.1.doc</p>
-</div>
-<div class="fragment fade-in">
-<p>file_v1.0.1.doc</p>
-</div>
-<div class="fragment fade-in">
-<p>file_final_1.0.doc</p>
-</div>
-<div class="fragment fade-in">
-<p>file_final_final.doc</p>
-</div>
-<div class="fragment fade-in">
-<p>Inspired by comic cartoons like <a href="https://xkcd.com/1459/">xkcd</a></p>
-</div>
+<section id="posit-cloud-repos-are-called-project" class="slide level2">
+<h2>Posit Cloud repos are called <code>project</code></h2>
+<p>Particularly because Posit Cloud repos are called <code>project</code>, if you have set up a connection to GitHub before you will geta message</p>
+<pre><code>Error: Repo &#39;Lextuga007/project&#39; already exists on &#39;github.com&#39;</code></pre>
+<p>It’s best to delete the GitHub repo (check for any work you want to keep!) and start again when using Posit Cloud.</p>
+<p>In GitHub, under the Settings tab and scroll down to the <code>Danger Zone</code>. You may need to Restart the R session as a refresh.</p>
 </section>
-<section id="git-learning-downside" class="slide level2">
-<h2>Git learning downside</h2>
-<p>Git may not really make sense if you are working on your own</p>
-<blockquote>
-<p>A solo data analyst, working on a single computer, will benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of your files, if that’s all you’re worried about.</p>
-</blockquote>
-<p><a href="https://happygitwithr.com/big-picture.html">Happy Git and GitHub for the userR</a> - Jenny Bryan</p>
-</section>
-<section id="reasons-why-git-and-github-hurts" class="slide level2">
-<h2>Reasons why Git and GitHub hurts</h2>
-<div>
-<ul>
-<li class="fragment">requires a completely new and longer workflow to work</li>
-<li class="fragment">collaborating with others can cause <strong>merge conflicts</strong></li>
-<li class="fragment">you can cause your own merge conflicts mess (we will do that in this course!)</li>
-</ul>
-</div>
-<blockquote>
-<p>this is not a one-time pain, this could be a dull ache for a long time</p>
-</blockquote>
-<p>Source: Happy Git and GitHub for the useR - <a href="https://happygitwithr.com/big-picture.html?q=version%20control#is-it-going-to-hurt">Is tit going to hurt</a> by Jenny Bryan</p>
-</section>
-<section id="so-why-bother" class="slide level2">
-<h2>So why bother?</h2>
-<div>
-<ul>
-<li class="fragment">Personal exposure: sharing publicly can feel scary because you assume people will judge, but you’ll soon find the judgement is positive as people are grateful for your sharing</li>
-<li class="fragment">Team exposure: there is a lot of repeated code for tasks duplicated across many organisations</li>
-<li class="fragment">Be keener: you can use other people’s work (with the right <a href="https://nhs-r-community.github.io/statements-on-tools/open-code-in-the-nhs.html#licenceslicenses">licences</a>) and keep up to date with all the work through GitHub for any changes, developments or improvements</li>
-<li class="fragment">Collaboration: we can work together!</li>
-</ul>
-</div>
-</section>
-<section id="git-benefits" class="slide level2">
-<h2>Git benefits</h2>
-<div>
-<ul>
-<li class="fragment">Are important if you want to share/communicate with others</li>
-<li class="fragment">Are paramount if you want to collaborate</li>
-<li class="fragment">Combined with RStudio, GitHub and R packages, can be a little easier to get started</li>
-</ul>
-</div>
-</section>
-<section id="github" class="slide level2">
-<h2>GitHub</h2>
-<p>Uses Git but is a separate platform (other services are available)</p>
-<p>It’s a web hosted site for public and private repositories</p>
-<p>Individuals and <a href="https://github.com/nhs-r-community">organisations</a> can have accounts</p>
-</section>
-<section id="rstudio-benefits" class="slide level2">
-<h2>RStudio benefits</h2>
-<p>As with so many things, other IDEs (Integrated development environment) are available</p>
-<div>
-<ul>
-<li class="fragment">Never having to leave one program to clean data, visualise it and do statistics</li>
-<li class="fragment">Also allows version control and use of Git/GitHub without having to open another program</li>
-</ul>
-</div>
-</section>
-<section id="rrstudio-things-that-are-needed" class="slide level2">
-<h2>R/RStudio things that are needed</h2>
-<div>
-<ul>
-<li class="fragment">A folder for the work</li>
-<li class="fragment"><a href="https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide">Set up a project</a> so there is a <code>.Rproj</code> bookmark in the folder</li>
-</ul>
-</div>
+<section id="pop-up-for-username-for-httpsgithub.com" class="slide level2">
+<h2>Pop up for username for <code>https://github.com</code></h2>
+<p>This is because the Personal Access Token hasn’t been set up correctly. It might have expired or deleted. Best resolved by resetting the PAT details.</p>
 </section>
 <section id="end-session" class="slide level2">
 <h2>End session</h2>
-</section>
-<section id="acknowledgements" class="slide level2">
-<h2>Acknowledgements</h2>
-<p><a href="https://happygitwithr.com/">Happy Git and GitHub</a> for the useR by Jenny Bryan</p>
-<p>Material adapted from the <a href="https://github.com/nhs-r-community/git_training/blob/main/guides/workshop_slides/Part%201-Intro%20to%20Git-Version%20Control.pdf">Git training</a> delivered at the NHS-R Community conference 2022.</p>
 
 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMzEyIDUyOC45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMzEyIDUyOC45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6dXJsKCNTVkdJRF8xXyk7fQoJLnN0MXtmaWxsOnVybCgjU1ZHSURfMDAwMDAxMjQ4NTc0NTU2MDM5MDA0NTE5NzAwMDAwMTQzMjgyMTU1MDk3MjE5Njg1NDRfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDEzOTI5NTUxMjc5MjM1OTI0NzczMDAwMDAwNDgzOTU0MDMyMzk0MzkxMDI3NV8pO30KCS5zdDN7ZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDU3ODY0ODAyMDAyMzM2MDUyNzAwMDAwMDA3MjMyNDE5MjUxMjUwOTkxNzQ3Xyk7fQoJLnN0NHtmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDY0NjM0NDk5ODA1MTYwMDkwNDAwMDAwMTg0MDk3Njk1ODA2MDM4NjczMTJfKTt9Cgkuc3Q1e2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDE3MzEyMDU3MDU3OTU4MzkxMDYxMDAwMDAwNjM5MjkyNDk2NDQzNDI2NTAwN18pO30KCS5zdDZ7ZmlsbDojQUZBRkFGO30KPC9zdHlsZT4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjMxMy42NTE3IiB5MT0iOTc2LjI5MiIgeDI9IjMxNC4yNjkzIiB5Mj0iOTc1LjY3NDQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoNzIxLjA5NCAwIDAgLTQ4Mi45MzcgLTIyNTM2MC4zOTA2IDQ3MTUwNS4xMjUpIj4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQ0NDRUQwIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6Izg0ODQ4QyIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDM0LjYsMzE1LjhjLTEyMywwLTIyMi43LTY2LjgtMjIyLjctMTQ5LjFjMC04Mi40LDk5LjctMTQ5LjEsMjIyLjctMTQ5LjFjMTIzLDAsMjIyLjcsNjYuOCwyMjIuNywxNDkuMQoJCUMxMjU3LjMsMjQ5LjEsMTE1Ny42LDMxNS44LDEwMzQuNiwzMTUuOHogTTEwNjguNyw3NS45Yy05My41LDAtMTY5LjMsNDUuNi0xNjkuMywxMDJzNzUuOCwxMDIsMTY5LjMsMTAyCgkJYzkzLjUsMCwxNjIuNS0zMS4yLDE2Mi41LTEwMkMxMjMxLjIsMTA3LjEsMTE2Mi4yLDc1LjksMTA2OC43LDc1Ljl6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDQ3MDQxMjEzOTIxMjE2NjU3NTUwMDAwMDE1MjAxMTI0OTc1MjMwMTY4NDU5XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMTMuODg4MiIgeTE9Ijk3Ni4zNzk0IiB4Mj0iMzE0LjUwNTciIHkyPSI5NzUuNzYxOCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzOTggMCAwIC00MDYuMTI0IC0xMjM5NDcuNDkyMiAzOTY2NTcuMDYyNSkiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDA0NzA0MTIxMzkyMTIxNjY1NzU1MDAwMDAxNTIwMTEyNDk3NTIzMDE2ODQ1OV8pOyIgZD0iTTExNTEuMSwyNDguNmMwLDAsMTMuNSw0LjEsMjEuMyw4CgkJYzIuNywxLjQsNy40LDQuMSwxMC44LDcuN2MzLjMsMy41LDQuOSw3LjEsNC45LDcuMWw1My4xLDg5LjZsLTg1LjgsMGwtNDAuMS03NS40YzAsMC04LjItMTQuMS0xMy4zLTE4LjJjLTQuMi0zLjQtNi00LjYtMTAuMi00LjYKCQljLTIuOSwwLTIwLjQsMC0yMC40LDBsMCw5OC4ybC03NiwwVjExMC4ySDExNDhjMCwwLDY5LjUsMS4zLDY5LjUsNjcuNFMxMTUxLjEsMjQ4LjYsMTE1MS4xLDI0OC42eiBNMTExOC4xLDE2NC42bC00NiwwbDAsNDIuNgoJCWw0NiwwYzAsMCwyMS4zLTAuMSwyMS4zLTIxLjdDMTEzOS40LDE2My40LDExMTguMSwxNjQuNiwxMTE4LjEsMTY0LjZ6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMTQ5MzYxNzQ1NzY4NjIwNjkwOTQwMDAwMDAzMTU5MzU0MTcxOTQwMTgzOTkzXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI1Ny43MDY4IiB5MT0iMjM0LjU1MTkiIHgyPSIyOTUuNTA2OSIgeTI9IjIzNC41NTE5Ij4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMzM2Q0IzIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzFDNURBOSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDkzNjE3NDU3Njg2MjA2OTA5NDAwMDAwMDMxNTkzNTQxNzE5NDAxODM5OTNfKTsiIGQ9Ik0yOTUuNSwzNTguNWgtNzcuN2wtODIuMy0xMjQuN3YxMjQuNwoJCUg1Ny43di0yNDhoNzcuN2w4Mi4zLDEyNi44VjExMC42aDc3LjdWMzU4LjV6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMzAuNTI1NSIgeTE9IjIzNC41NTE5IiB4Mj0iNTU5LjkyMDEiIHkyPSIyMzQuNTUxOSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2Xyk7IiBkPSJNNTU5LjksMTEwLjZ2MjQ4aC03Ny43di05Ni43aC03My45djk2LjcKCQloLTc3Ljd2LTI0OGg3Ny43djg5LjNoNzMuOXYtODkuM0g1NTkuOXoiLz4KCQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMDAwMDAwMzgzODA5Mzg5Mzk2NzU5NDQxNzAwMDAwMDUwOTg0NTgwODQ0OTk0MzA1NjBfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjU4Ny45MzQzIiB5MT0iMjMzLjY3NjQiIHgyPSI3ODYuNTA5IiB5Mj0iMjMzLjY3NjQiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDAzODM4MDkzODkzOTY3NTk0NDE3MDAwMDAwNTA5ODQ1ODA4NDQ5OTQzMDU2MF8pOyIgZD0iTTc3NS41LDMyMy45Yy03LjQsMTEuNC0xOCwyMC41LTMyLDI3LjEKCQljLTE0LDYuNy0zMC43LDEwLTUwLjEsMTBjLTI5LjcsMC01NC4xLTYuOS03My40LTIwLjhjLTE5LjMtMTMuOS0yOS43LTM0LjMtMzEuMy02MS4xaDgyLjdjMS4yLDE0LjIsNy41LDIxLjQsMTguOSwyMS40CgkJYzQsMCw3LjItMS4xLDkuNi0zLjJjMi41LTIuMSwzLjctNS4xLDMuNy05LjFjMC01LjgtMy0xMC40LTguOS0xMy44Yy02LTMuNC0xNS42LTcuMy0yOC45LTExLjdjLTE1LjYtNS4xLTI4LjctMTAuNC0zOS0xNS44CgkJYy0xMC40LTUuNC0xOS40LTEzLjMtMjcuMS0yMy44Yy03LjctMTAuNS0xMS42LTI0LjItMTEuNi00MWMwLTE2LjEsNC4xLTI5LjgsMTIuNC00MS4yYzguMy0xMS4zLDE5LjYtMTkuOSwzNC0yNS43CgkJYzE0LjQtNS44LDMwLjUtOC44LDQ4LjUtOC44YzI5LjYsMCw1My4yLDYuOSw3MC43LDIwLjdjMTcuNSwxMy44LDI3LjEsMzMuNiwyOC43LDU5LjVoLTgzLjdjLTEuMi0xMy4xLTYuNS0xOS42LTE2LjEtMTkuNgoJCWMtMy4zLDAtNiwxLTguMSwzYy0yLjEsMi0zLjIsNS0zLjIsOC45YzAsNS40LDMsOS44LDguOSwxMy4xYzYsMy40LDE1LjIsNy4zLDI3LjgsMTEuN2MxNS45LDUuNiwyOSwxMS4yLDM5LjQsMTYuNgoJCWMxMC40LDUuNSwxOS41LDEzLjUsMjcuMywyNC4yYzcuOCwxMC42LDExLjcsMjQuMiwxMS43LDQwLjhDNzg2LjUsMjk5LjYsNzgyLjgsMzEyLjQsNzc1LjUsMzIzLjl6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI4MjEuOTYwOSIgeTE9IjIzOC45MjExIiB4Mj0iOTYxLjc2MDciIHkyPSIyMzguOTIxMSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1Xyk7IiBkPSJNOTYxLjgsMjExLjV2NTQuOUg4MjJ2LTU0LjlIOTYxLjh6Ii8+CjwvZz4KPGc+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNMTM2LjIsNDIyLjFjOC4xLDYuNCwxMy41LDE1LDE2LjEsMjUuOWgtMjAuOGMtMi4yLTUuMy01LjUtOS41LTEwLTEyLjZjLTQuNS0zLjEtMTAtNC42LTE2LjMtNC42CgkJYy01LjIsMC0xMCwxLjMtMTQuMiwzLjljLTQuMiwyLjYtNy41LDYuNC05LjgsMTEuMmMtMi4zLDQuOS0zLjUsMTAuNi0zLjUsMTcuMWMwLDYuNSwxLjIsMTIuMSwzLjUsMTdjMi4zLDQuOSw1LjYsOC42LDkuOCwxMS4yCgkJYzQuMiwyLjYsOC45LDMuOSwxNC4yLDMuOWM2LjQsMCwxMS44LTEuNSwxNi4zLTQuNmM0LjUtMy4xLDcuOS03LjMsMTAtMTIuNmgyMC44Yy0yLjYsMTAuOS04LDE5LjYtMTYuMSwyNS45CgkJYy04LjEsNi40LTE4LjQsOS41LTMwLjcsOS41Yy05LjQsMC0xNy44LTIuMS0yNS02LjRjLTcuMi00LjMtMTIuOS0xMC4yLTE2LjgtMTcuOWMtNC03LjctNi0xNi40LTYtMjYuMWMwLTkuOCwyLTE4LjYsNi0yNi4yCgkJYzQtNy43LDkuNi0xMy42LDE2LjgtMTcuOWM3LjItNC4zLDE1LjYtNi40LDI1LjEtNi40QzExNy45LDQxMi42LDEyOC4xLDQxNS44LDEzNi4yLDQyMi4xeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTI4MC45LDQxOC42YzcuNSw0LjMsMTMuNSwxMC4zLDE3LjgsMThjNC4zLDcuNyw2LjUsMTYuNCw2LjUsMjYuMmMwLDkuNy0yLjIsMTguNS02LjUsMjYuMgoJCWMtNC4zLDcuOC0xMC4zLDEzLjgtMTcuOCwxOC4xYy03LjUsNC4zLTE1LjksNi41LTI1LjIsNi41Yy05LjMsMC0xNy42LTIuMS0yNS4yLTYuNWMtNy41LTQuMy0xMy41LTEwLjMtMTcuOC0xOC4xCgkJYy00LjMtNy44LTYuNS0xNi41LTYuNS0yNi4yYzAtOS43LDIuMi0xOC40LDYuNS0yNi4yYzQuMy03LjcsMTAuMy0xMy43LDE3LjgtMThjNy41LTQuMywxNS45LTYuNSwyNS4yLTYuNQoJCUMyNjUsNDEyLjIsMjczLjQsNDE0LjMsMjgwLjksNDE4LjZ6IE0yNDAuNCw0MzQuM2MtNC40LDIuNi03LjgsNi40LTEwLjMsMTEuM2MtMi41LDQuOS0zLjcsMTAuNi0zLjcsMTcuMmMwLDYuNSwxLjIsMTIuMywzLjcsMTcuMgoJCWMyLjUsNC45LDUuOSw4LjcsMTAuMywxMS4zYzQuNCwyLjYsOS41LDMuOSwxNS4zLDMuOWM1LjgsMCwxMC45LTEuMywxNS4zLTMuOWM0LjQtMi42LDcuOC02LjQsMTAuMy0xMS4zCgkJYzIuNS00LjksMy43LTEwLjYsMy43LTE3LjJjMC02LjUtMS4yLTEyLjMtMy43LTE3LjJjLTIuNS00LjktNS45LTguNy0xMC4zLTExLjNjLTQuNC0yLjYtOS41LTMuOS0xNS4zLTMuOQoJCUMyNDkuOSw0MzAuNCwyNDQuOCw0MzEuNywyNDAuNCw0MzQuM3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik00NjguOSw0MTQuN3Y5Ny45aC0xOS42di02OC4zbC0yNS4xLDY4LjNINDA3bC0yNS4xLTY4djY4aC0xOS44di05Ny45aDI0bDI5LjcsNzMuNmwyOS4yLTczLjZINDY4Ljl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNNjM1LjYsNDE0Ljd2OTcuOUg2MTZ2LTY4LjNsLTI1LjEsNjguM2gtMTcuMWwtMjUuMS02OHY2OGgtMTkuOHYtOTcuOWgyNGwyOS43LDczLjZsMjkuMi03My42SDYzNS42eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTcxNC43LDQxMy42djU4LjFjMCw3LjgsMS43LDEzLjYsNS4xLDE3LjVjMy40LDMuOSw4LjMsNS44LDE0LjgsNS44YzYuNCwwLDExLjItMS45LDE0LjctNS44CgkJYzMuNC0zLjksNS4xLTkuNyw1LjEtMTcuNXYtNTguMWgxOS42djU4LjFjMCw5LjItMS43LDE2LjktNS4xLDIzLjJjLTMuNCw2LjMtOC4xLDExLTE0LjIsMTQuMWMtNiwzLjEtMTIuOSw0LjYtMjAuNSw0LjYKCQljLTExLjksMC0yMS40LTMuNi0yOC41LTEwLjdjLTcuMS03LjEtMTAuNy0xNy41LTEwLjctMzEuM3YtNTguMUg3MTQuN3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik05MTcuNCw1MTIuNmgtMTkuOGwtNDQuMy02Ny4zdjY3LjNoLTE5Ljh2LTk5aDE5LjhsNDQuMyw2Ny45di02Ny45aDE5LjhWNTEyLjZ6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNOTk3LjIsNDEzLjZ2OTloLTE5Ljh2LTk5SDk5Ny4yeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTExMjQuNSw0MTMuNnYxNS43aC0yNy4zdjgzLjNoLTE5Ljh2LTgzLjNoLTI3LjJ2LTE1LjdIMTEyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTEyNTcuMyw0MTMuNmwtMzMuNSw2NC40djM0LjZoLTE5Ljl2LTM0LjZsLTMzLjctNjQuNGgyMi43bDIxLDQzLjNsMjEtNDMuM0gxMjU3LjN6Ii8+CjwvZz4KPC9zdmc+Cg==" class="slide-logo r-stretch"><div class="footer footer-default">
 
