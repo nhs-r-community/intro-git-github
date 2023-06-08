@@ -36,6 +36,8 @@ start work, make a commit and pull request [Merge
 conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) -
 repeat steps from previous session and create a conflict merge
 
+session-commit-main
+
 session-cloning
 
 [{usethis}

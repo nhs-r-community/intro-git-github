@@ -34,6 +34,8 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 [Using R packages {usethis} and {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) - start work, make a commit and pull request
 [Merge conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) - repeat steps from previous session and create a conflict merge
 
+session-commit-main
+
 session-cloning
 
 [{usethis} errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) - typical errors from set up issues

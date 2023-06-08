@@ -1,0 +1,63 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Commit to main and undo commit to main"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    preview-links: true
+execute: 
+  echo: false
+  eval: false
+embed-resources: true  
+---
+
+## Not recommended, but sometimes useful
+
+The `pr_*` functions all relate to Pull Requests but it is possible to commit to main directly
+
+Commit work using
+
+```{r}
+gert::git_commit_all("This is a message")
+
+# or
+
+gert::git_add("file.qmd")
+gert::git_commit("This is a message")
+
+```
+
+and then use the `Push` button in the Git RStudio pane or in the Terminal ($)
+
+```{bash}
+git push
+```
+
+## Accidentally committed 
+
+::: {.incremental}
+- If you commit by accident to any branch, but particularly main, you can undo the last commit
+- You can undo any number of last commits!
+- This has to be done in the Terminal ($)
+:::
+
+To undo the commit but keep the changes
+
+```{bash}
+git reset --soft HEAD~1
+```
+
+To remove the commit and changes
+
+```{bash}
+git reset --hard HEAD~1
+```
+
+
+## End session
