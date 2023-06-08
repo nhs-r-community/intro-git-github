@@ -20,7 +20,7 @@ embed-resources: true
 
 ## Any errors?
 
-If you get this:
+If you get this
 
 ```
 ✔ Setting active project to '/cloud/project'
@@ -45,9 +45,7 @@ You can use Git locally (F5 refresh in the Cloud).
 
 Particularly because Posit Cloud repos are called `project`, if you have set up a connection to GitHub before you will geta message
 
-```
-Error: Repo 'Lextuga007/project' already exists on 'github.com'
-```
+> Error: Repo 'Lextuga007/project' already exists on 'github.com'
 
 It's best to delete the GitHub repo (check for any work you want to keep!) and start again when using Posit Cloud.
 
@@ -60,5 +58,60 @@ This is because the Personal Access Token hasn't been set up correctly.
 It might have expired or deleted. 
 Best resolved by resetting the PAT details.
 
+## "pull request ready"
+
+```
+Unable to confirm the GitHub remote configuration is "pull request ready".
+You probably need to configure a personal access token for 'github.com'.
+See `gh_token_help()` for help.
+(Or maybe we're just offline?)
+Unexpected GitHub remote configuration: 'maybe_ours_or_theirs'
+Host = 'https://github.com'
+origin = 'nhs-r-community/intro-git-github'
+upstream = <not configured>
+'origin' is a GitHub repo and 'upstream' is either not configured or is not a GitHub repo.
+
+We may be offline or you may need to configure a GitHub personal access
+token. `gh_token_help()` can help with that.
+
+Read more about what this GitHub remote configurations means at:
+'https://happygitwithr.com/common-remote-setups.html'
+
+1: Yes, I want to proceed. I know what I'm doing.
+2: No, I want to stop and straighten out my GitHub remotes first.
+```
+
+Trying `pr_pull()` may give this:
+
+```
+Error: Unable to get GitHub info for these remotes: 'origin'
+Are we offline? Is GitHub down? Has the repo been deleted?
+Otherwise, you probably need to configure a personal access token (PAT) for 'github.com'
+See `?gh_token_help` for advice
+```
+
+which suggests the PAT has been removed/deleted or is unobtainable by the project.
+
+It may be that an alternative place to save the PAT is needed
+
+## Storing the PAT in .Renviron
+
+This is no longer a recommended way of saving a PAT but is required in some circumstances (linux servers)
+
+```{r}
+usethis::edit_r_environ()
+```
+
+will open a blank document in RStudio
+
+## Text in .Renviron
+
+With no spaces, returns or any spacing the PAT is added to the file like
+
+> GITHUB_PAT=ghp_gobbledygookgeneratedbygithub
+
+Restart the R session (Ctrl+Shift+F10)
+
+Running `Sys.getenv("GITHUB_PAT")` in the Console will show the PAT code
 
 ## End session
