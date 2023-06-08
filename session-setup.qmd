@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - Getting started with Git"
+subtitle: "Session - Getting started with Git and GitHub"
 author: "Zoë Turner"
 format:
   revealjs:
