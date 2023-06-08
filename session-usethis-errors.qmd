@@ -1,0 +1,64 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - {usethis} errors"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    self-contained: true
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Any errors?
+
+If you get this:
+
+```
+✔ Setting active project to '/cloud/project'
+Error in `stop_bad_github_remote_config()`:
+! Unsupported GitHub remote configuration: 'no_github'
+• Host = NA
+• origin = <not configured>
+• upstream = <not configured>
+• Neither 'origin' nor 'upstream' is a GitHub repo.
+
+Read more about the GitHub remote configurations that usethis supports at:
+'https://happygitwithr.com/common-remote-setups.html'
+Run `rlang::last_trace()` to see where the error occurred.
+```
+
+It's because GitHub connections (including personal access tokens) haven't been set up.
+The {usethis} functions won't work though as they require a connection to GitHub
+
+You can use Git locally (F5 refresh in the Cloud).
+
+## Posit Cloud repos are called `project`
+
+Particularly because Posit Cloud repos are called `project`, if you have set up a connection to GitHub before you will geta message
+
+```
+Error: Repo 'Lextuga007/project' already exists on 'github.com'
+```
+
+It's best to delete the GitHub repo (check for any work you want to keep!) and start again when using Posit Cloud.
+
+In GitHub, under the Settings tab and scroll down to the `Danger Zone`.
+You may need to Restart the R session as a refresh.
+
+## Pop up for username for `https://github.com`
+
+This is because the Personal Access Token hasn't been set up correctly.
+It might have expired or deleted. 
+Best resolved by resetting the PAT details.
+
+
+## End session

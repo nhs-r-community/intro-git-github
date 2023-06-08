@@ -10,7 +10,6 @@ format:
     logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
     code-link: true
     css: nhsr-quarto.scss
-    self-contained: true
     preview-links: true
 execute: 
   echo: true
@@ -25,6 +24,8 @@ embed-resources: true
 Source: [Happy Git and GitHub for the useR](https://happygitwithr.com/big-picture.html?q=version%20control#big-picture) by Jenny Bryan
 
 ## Managing your files
+
+Is this familiar?
 
 ::: {.fragment .fade-in}
 file_v1.0.doc
@@ -41,10 +42,11 @@ file_final_1.0.doc
 ::: {.fragment .fade-in}
 file_final_final.doc
 :::
-
+::: {.fragment .fade-in}
 Inspired by comic cartoons like [xkcd](https://xkcd.com/1459/)
+:::
 
-## Git benefits
+## Git learning downside
 
 Git may not really make sense if you are working on your own
 
@@ -52,28 +54,51 @@ Git may not really make sense if you are working on your own
 
 [Happy Git and GitHub for the userR](https://happygitwithr.com/big-picture.html) - Jenny Bryan
 
-* Are important if you want to share/communicate with others
-* Are paramount if you want to collaborate
+## Reasons why Git and GitHub hurts
+
+::: incremental
+- requires a completely new and longer workflow to work
+- collaborating with others can cause **merge conflicts**
+- you can cause your own merge conflicts mess (we will do that in this course!)
+:::
+
+> this is not a one-time pain, this could be a dull ache for a long time
+
+Source: Happy Git and GitHub for the useR - [Is tit going to hurt](https://happygitwithr.com/big-picture.html?q=version%20control#is-it-going-to-hurt) by Jenny Bryan
+
+## So why bother?
+
+::: incremental
+- Personal exposure: sharing publicly can feel scary because you assume people will judge, but you'll soon find the judgement is positive as people are grateful for your sharing
+- Team exposure: there is a lot of repeated code for tasks duplicated across many organisations
+- Be keener: you can use other people's work (with the right [licences](https://nhs-r-community.github.io/statements-on-tools/open-code-in-the-nhs.html#licenceslicenses)) and keep up to date with all the work through GitHub for any changes, developments or improvements
+- Collaboration: we can work together! 
+:::
+
+## Git benefits
+
+:::incremental
+- Are important if you want to share/communicate with others
+- Are paramount if you want to collaborate
+- Combined with RStudio, GitHub and R packages, can be a little easier to get started
+:::
 
 ## GitHub
 
-Uses Git but is a separate platform (other services are available)
-
-Like RStudio which encompasses R
-
-::: {.fragment .fade-in}
-GitHub encompasses Git
+:::incremental
+- Uses Git but is a separate platform (other services are available)
+- It's a web hosted site for public and private repositories
+- GitHub is a very friendly user interface and is being updated with new features.
+- Individuals and [organisations](https://github.com/nhs-r-community) can have accounts
 :::
 
-## RStudio
+## RStudio benefits
 
 As with so many things, other IDEs (Integrated development environment) are available
 
-::: {.fragment .fade-in}
-The benefits of RStudio are never having to leave one program to clean data, visualise it and do statistics
-:::
-::: {.fragment .fade-in}
-RStudio also allows version control and collaboration without having to open another program
+:::incremental
+- Never having to leave one program to clean data, visualise it and do statistics
+- Also allows version control and use of Git/GitHub without having to open another program
 :::
 
 ## R/RStudio things that are needed
@@ -81,8 +106,6 @@ RStudio also allows version control and collaboration without having to open ano
 ::: incremental
 - A folder for the work
 - [Set up a project](https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide) so there is a `.Rproj` bookmark in the folder
-- Set up Git and GitHub
-
 :::
 
 ## End session

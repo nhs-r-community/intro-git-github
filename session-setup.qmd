@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - Setting up Git and GitHub using {usethis}"
+subtitle: "Session - Getting started with Git"
 author: "Zoë Turner"
 format:
   revealjs:
@@ -10,13 +10,93 @@ format:
     logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
     code-link: true
     css: nhsr-quarto.scss
-    self-contained: true
     preview-links: true
 execute: 
   echo: true
   eval: false
 embed-resources: true  
 ---
+
+## Configure Git
+
+Configure `user.name` and `user.email`.
+
+```{r}
+library(usethis)
+usethis::use_git_config(
+  user.name = "github_name", # Make sure this matches your GitHub account
+  user.email = "jane@example.com" # Use the email associated with GitHub account
+)
+```
+
+## Check Git configuration
+
+Ask for a **sit**uation **rep**ort.
+
+```{r}
+usethis::git_sitrep()
+```
+
+A lot of information will appear in the RStudio Console!
+
+```
+Git config (global)
+• Name: <unset>
+• Email: <unset>
+• Global (user-level) gitignore file: <unset>
+• Vaccinated: FALSE
+ℹ See `?git_vaccinate` to learn more
+ℹ Defaulting to 'https' Git protocol
+• Default Git protocol: 'https'
+• Default initial branch name: <unset>
+GitHub
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': <unset>
+• To create a personal access token, call `create_github_token()`
+• To store a token for current and future use, call `gitcreds::gitcreds_set()`
+ℹ Read more in the 'Managing Git(Hub) Credentials' article:
+  https://usethis.r-lib.org/articles/articles/git-credentials.html
+Git repo for current project
+• Active usethis project: '/cloud/project'
+ℹ Active project is not a Git repo
+```
+
+## Vaccinate
+
+```{r}
+usethis::git_vaccinate()
+```
+
+>Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it's missing from your global Git config.
+
+## Personal access token
+
+- Communicating with GitHub will require authentication
+
+- Instead of typing in your username and password each time, use a **PAT** (personal access token)
+
+## Create a PAT
+
+- Create a PAT
+- Give the token a descriptive name like `connect-posit-github`
+- Untick blue ticks (because this is on the cloud)
+- Copy and also store this token somewhere (you won't be able to see it again!)
+
+```{r}
+usethis::create_github_token()
+```
+
+To amend/delete existing tokens go to: [https://github.com/settings/tokens](https://github.com/settings/tokens)
+
+## Store your PAT
+
+Put your PAT into the Git credential store
+
+```{r}
+gitcreds::gitcreds_set()
+```
+
+Set the token to 7 days if you are using the cloud or use `gitcreds::gitcreds_delete()` after the course for security.
 
 ## Starting Git from an existing project
 
@@ -30,12 +110,12 @@ Note that Posit Cloud workspace _is_ a project so you will see `git-project.Rpro
 
 ## Verbose feedback
 
-```{r}
+```
 √ Initialising Git repo
 √ Adding '.Rdata', '.httr-oauth', '.DS_Store' to '.gitignore'
 There are 2 uncommitted files:
 • '.gitignore'
-• 'myRepo.Rproj'
+• 'git_project.Rproj'
 Is it ok to commit them?
 
 1: Yeah
@@ -43,11 +123,11 @@ Is it ok to commit them?
 3: No
 ```
 
-Choose the Yes option
+Choose the positive option (these change so might say `I agree` instead of `Yes`)
 
-## Next step
+## Initial commit
 
-```{r}
+```
 √ Adding files
 √ Commit with message 'Initial commit'
 • A restart of RStudio is required to activate the Git pane
@@ -58,27 +138,27 @@ Restart now?
 3: No
 ```
 
-Choose the Yes option
+Choose the positive option
 
-## Use GitHub
+The save workspace option to `.Rdata` can be either yes or no
 
-To create a copy on GitHub we use `usethis::use_github()`
+A new file for `.gitignore` will appear in the Files pane
 
-This takes a local project, creates an associated repo on GitHub, adds it to your local repo as the "origin remote", and makes an initial "push" to synchronize.
+## Connect this to GitHub
 
-## Use GitHub
-
-Copy your local repo to GitHub
+To create a copy on GitHub 
 
 ```{r}
 usethis::use_github()
 ```
 
-## Use GitHub
+This will open up the GitHub page in your default browser
+
+## Message about ssh and https
 
 If you get this:
 
-```{r}
+```
 ✔ Checking that current branch is 'main'
 Which git protocol to use? (enter 0 to exit) 
 1: ssh   <-- presumes that you have set up ssh keys
@@ -87,18 +167,51 @@ Which git protocol to use? (enter 0 to exit)
 
 Choose 2 at the moment.
 
-## Use GitHub
+## GitHub connected message in RStudio
+
+```
+ℹ Defaulting to 'https' Git protocol
+✔ Setting active project to '/cloud/project'
+✔ Creating GitHub repository 'Lextuga007/project'
+✔ Setting remote 'origin' to 'https://github.com/Lextuga007/project.git'
+✔ Pushing 'master' branch to GitHub and setting 'origin/master' as upstream branch
+✔ Opening URL 'https://github.com/Lextuga007/project'
+```
+
+## master or main?
+
+The branch is called `master` here as default but conventionally people have moved to `main`
+To rename this branch (in GitHub not locally)
 
 ```{r}
-i Defaulting to 'https' Git protocol
-√ Creating GitHub repository
-√ Setting remote 'origin' to 'https://github.com/3mmaRand/mypackage.git'
-√ Adding GitHub links to DESCRIPTION
-√ Setting URL field in DESCRIPTION to 'https://github.com/3mmaRand/mypackage'
-√ Setting BugReports field in DESCRIPTION to 'https://github.com/3mmaRand/mypackage/issues'
-√ Pushing 'master' branch to GitHub and setting remote tracking branch
-√ Opening URL 'https://github.com/3mmaRand/mypackage'
+usethis::git_default_branch_rename(from = "master", to = "main")
 ```
+
+Repeat the code and a different message appears
+
+```
+✖ It's weird that the current default branch for your local repo and the source repo are different:
+  'master' (local) != 'main' (source)
+Are you sure you want to proceed?
+
+1: yes
+2: no
+```
+
+This is our first insight into how Git sees local and remote as two separate things!
+
+## Set future default branches to main
+
+This won't affect other projects in the cloud but is useful on a computer
+
+```{r}
+usethis::git_default_branch_configure()
+```
+
+## Updating historic repositories
+
+If you want to update a lot of old repository default branches from `master` to `main` this can be done using a [Shiny app](https://www.garrickadenbuie.com/blog/branchmover/) built by Garrick Aden-Buie, Software Engineer for Shiny at Posit.
+
 
 ## End session
 
@@ -108,3 +221,5 @@ These slides were designed by Mine Çetinkaya-Rundel and Emma Rand for the Forwa
 
 [Your first package](https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/your-first-package.html#1) and
 [Setting up your system](https://forwards.github.io/workshops/package-dev-modules/slides/02-setting-up-system/setting-up-system.html#1)
+
+CDU Data Science [Personal Access Tokens blog](https://cdu-data-science-team.github.io/team-blog/posts/2021-12-18-personal-access-tokens/)

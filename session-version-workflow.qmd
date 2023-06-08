@@ -10,7 +10,6 @@ format:
     logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
     code-link: true
     css: nhsr-quarto.scss
-    self-contained: true
     preview-links: true
 execute: 
   echo: true
@@ -20,20 +19,27 @@ embed-resources: true
 
 ## Snapshots
 
-When working it's good to practice regular saving
+It's good to practice regular saving of files when you work - whatever the program
 
-But what if you want to take a snapshot before you do something major?
-
-::: {.fragment .fade-in}
-This is where you would **commit** file(s)
+:::incremental
+- But what if you want to take a snapshot before you do something major?
+- You could save files as version 1, version 2 and so on 
+- Git allows whole project snapshots of many documents
 :::
-::: {.fragment .fade-in}
-Whilst this may be something done on individual files, Git allows how project snapshots
+
+## Not just for new material
+
+Have you ever commented out code that you want to delete but don't want to lose - just in case?
+
+:::incremental
+- Git allows things to be deleted and add a message as to why you did that
+- Roll backs are therefore available
+- And if you want to find the old code but not roll back - Git has that history
 :::
 
 ## Local and Remote
 
-Once you have a snapshot stored locally (Git) you can also **push** the snapshot to a remote site (GitHub) 
+Once you have a snapshot stored locally (Git) you can **push** the snapshot to a remote site (GitHub) 
 
 This is like:
 
@@ -46,12 +52,12 @@ This is like:
 
 The tendency for much of analysis work is to share once something is finished
 
-But **commit** snapshots 
+But **commits** (snapshots)
 
 ::: incremental
 - allow others to contribute with your work in progress
-- helps you think clearly about code as others will see it
-- give the opportunity to **revert** back to something that was better/worked
+- forces you to think clearly about code as others will see it
+- give the opportunity to **revert** (roll back) to something that was better
 :::
 
 ## Private or public repository?
