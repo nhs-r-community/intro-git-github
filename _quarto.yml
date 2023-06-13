@@ -1,5 +1,9 @@
 project:
   title: "intro-git-github"
+  render:
+    - "*.qmd"
+    - "!LICENCE.md"
+
 #  output-dir: "/slides"
   
 
