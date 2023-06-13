@@ -1295,6 +1295,21 @@ See `?gh_token_help` for advice</code></pre>
 <p>Restart the R session (Ctrl+Shift+F10)</p>
 <p>Running <code>Sys.getenv(&quot;GITHUB_PAT&quot;)</code> in the Console will show the PAT code</p>
 </section>
+<section id="error-in-libgit2git_branch_create" class="slide level2">
+<h2>“Error in libgit2::git_branch_create”</h2>
+<p>With the error:</p>
+<blockquote>
+<p>Error in libgit2::git_branch_create : the given reference name ’refs/heads/Add render specifics to _quarto.yml’ is not valid</p>
+</blockquote>
+<p>Check that the name given in the command <code>usethis::pr_init()</code> is in the branch format</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>usethis<span class="sc">::</span><span class="fu">pr_init</span>(<span class="st">&quot;update-quarto-yml&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>not like a commit format (with spaces often)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>usethis<span class="sc">::</span><span class="fu">pr_init</span>(<span class="st">&quot;Add render specifics to _quarto.yml&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="end-session" class="slide level2">
 <h2>End session</h2>
 

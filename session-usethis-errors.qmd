@@ -114,4 +114,24 @@ Restart the R session (Ctrl+Shift+F10)
 
 Running `Sys.getenv("GITHUB_PAT")` in the Console will show the PAT code
 
+## "Error in libgit2::git_branch_create"
+
+With the error:
+
+>Error in libgit2::git_branch_create : 
+  the given reference name 'refs/heads/Add render specifics to _quarto.yml' is not valid
+
+Check that the name given in the command `usethis::pr_init()` is in the branch format
+
+```{r}
+usethis::pr_init("update-quarto-yml")
+
+```
+
+not like a commit format (with spaces often)
+
+```{r}
+usethis::pr_init("Add render specifics to _quarto.yml")
+```
+
 ## End session
