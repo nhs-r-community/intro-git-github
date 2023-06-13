@@ -10,11 +10,11 @@ format:
     logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
     code-link: true
     css: nhsr-quarto.scss
-    self-contained: true
     preview-links: true
 execute: 
   echo: false
   eval: true
+embed-resources: true
 ---
 
 ```{r}
