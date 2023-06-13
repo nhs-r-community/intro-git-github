@@ -10,7 +10,6 @@ format:
     logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
     code-link: true
     css: nhsr-quarto.scss
-    self-contained: true
     preview-links: true
 execute: 
   echo: true
@@ -18,7 +17,7 @@ execute:
 embed-resources: true  
 ---
 
-## Any errors?
+## Error in "stop_bad_github_remote_config()"
 
 If you get this
 
@@ -41,6 +40,22 @@ The {usethis} functions won't work though as they require a connection to GitHub
 
 You can use Git locally (F5 refresh in the Cloud).
 
+## If they continue
+
+In the Terminal (starts with `$` on the command line
+
+```{bash}
+git remote -v
+```
+
+Gives details of the remote branch, if nothing shows and both the `push` and `pull` buttons in RStudio are grey
+
+```{bash}
+git remote add origin <remote_URL>
+```
+
+with the url coming from the HTTPS url from GitHub's green button `Code` on the repo.
+
 ## Posit Cloud repos are called `project`
 
 Particularly because Posit Cloud repos are called `project`, if you have set up a connection to GitHub before you will geta message
@@ -58,7 +73,7 @@ This is because the Personal Access Token hasn't been set up correctly.
 It might have expired or deleted. 
 Best resolved by resetting the PAT details.
 
-## "pull request ready"
+## Unable to confirm the GitHub remote configuration is "pull request ready"
 
 ```
 Unable to confirm the GitHub remote configuration is "pull request ready".
@@ -134,4 +149,17 @@ not like a commit format (with spaces often)
 usethis::pr_init("Add render specifics to _quarto.yml")
 ```
 
+## Error: The `pr_*()` functions facilitate pull requests.
+
+This may be where the function `pr_push()` is being used but from the main branch
+
+If changes are required (for example to reinstate the greyed out `push` and `pull` in RStudio)
+
+On the Git Terminal (where the command line starts with `$`)
+
+```{bash}
+git push --set-upstream origin main
+```
+
+Refresh the RStudio git pane to ensure the buttons are no longer greyed out
 ## End session
