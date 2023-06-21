@@ -1,0 +1,60 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Undo last merge"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## The benefit of working in increments
+
+Working in small chunks, committing and using pull requests means that there are more points to revert back to if things go wrong
+
+Commits were covered in [Commit to main (and undo last commit)](https://nhs-r-community.github.io/intro-git-github/session-commit-main.html#/title-slide) but what about a merged branch?
+
+In GitHub, find the pull request and at the bottom is a button `Revert`
+
+## History of mistakes
+
+::: {.incremental}
+- Using `Revert` in GitHub (and other ways to undo work) creates a new commit
+- This means that your commit history is a record of all your work, even mistakes
+- It's absolutely ok and not something to be anxious about
+- But if you do commit information that is sensitive this needs to be removed and is an Information Governance Issue
+:::
+
+## Removing sensitive data from a repository
+
+It's a thing that every user of GitHub needs to consider and GitHub has [guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) but does refer to a [tool](https://rtyley.github.io/bfg-repo-cleaner/) that needs installing
+
+> If this isn’t available to you it is still possible to purge a file and its commit history but as there are many different scenarios... [TiddlyWiki](http://sukima.github.io/GitFixUm/).
+
+is like a choose your own adventure.
+
+::: {.notes}
+Acknowledge making a mistake is scary and not an adventure! 
+There will be people to help though, through the NHS-R Community and people should definitely feel they can ask for help. 
+:::
+
+## When in doubt - make it private
+
+You can change the visibility of a repository through the `Settings` tab in GitHub
+
+Remember you may need your 2FA app for authentication if that's set up
+
+## End session
+
+### Acknowledgements
+
+CDU Data Science Team blog [When things go wrong in GitHub](https://cdu-data-science-team.github.io/team-blog/posts/2022-11-09-when-things-go-wrong-in-github/)
