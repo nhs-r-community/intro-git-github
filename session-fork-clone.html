@@ -1144,7 +1144,7 @@ margin-right: 0; }
 
 <section id="title-slide" data-background-color="#43464B" class="quarto-title-block center">
   <h1 class="title">Introduction to Git and GitHub</h1>
-  <p class="subtitle">Session - Commit to main (and undo last commit!)</p>
+  <p class="subtitle">Session - Undo last merge</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1155,20 +1155,53 @@ Zoë Turner
 </div>
 
 </section>
-<section id="not-recommended-but-sometimes-useful" class="slide level2">
-<h2>Not recommended, but sometimes useful</h2>
-<p>The <code>pr_*</code> functions all relate to Pull Requests but it is possible to commit to main directly</p>
-<p>Commit work using</p>
-<p>and then use the <code>Push</code> button in the Git RStudio pane or in the Terminal ($)</p>
+<section id="the-benefit-of-working-in-increments" class="slide level2">
+<h2>The benefit of working in increments</h2>
+<p>Working in small chunks, committing and using pull requests means that there are more points to revert back to if things go wrong</p>
+<p>Commits were covered in <a href="https://nhs-r-community.github.io/intro-git-github/session-commit-main.html#/title-slide">Commit to main (and undo last commit)</a> but what about a merged branch?</p>
+<p>In GitHub, find the pull request and at the bottom is a button <code>Revert</code></p>
 </section>
-<section id="accidentally-committed" class="slide level2">
-<h2>Accidentally committed</h2>
-<p>If you commit by accident to any branch, but particularly main, you can undo the last commit</p>
-<p>You can undo any number of last commits!</p>
-<p>This has to be done in the Terminal ($)</p>
+<section id="history-of-mistakes" class="slide level2">
+<h2>History of mistakes</h2>
+<div>
+<ul>
+<li class="fragment">Using <code>Revert</code> in GitHub (and other ways to undo work) creates a new commit</li>
+<li class="fragment">This means that your commit history is a record of all your work, even mistakes</li>
+<li class="fragment">It’s absolutely ok and not something to be anxious about</li>
+<li class="fragment">But if you do commit information that is sensitive this needs to be removed and is an Information Governance Issue</li>
+</ul>
+</div>
+</section>
+<section id="removing-sensitive-data-from-a-repository" class="slide level2">
+<h2>Removing sensitive data from a repository</h2>
+<p>It’s a thing that every user of GitHub needs to consider and GitHub has <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">guidance</a> but does refer to a <a href="https://rtyley.github.io/bfg-repo-cleaner/">tool</a> that needs installing</p>
+<blockquote>
+<p>If this isn’t available to you it is still possible to purge a file and its commit history but as there are many different scenarios… <a href="http://sukima.github.io/GitFixUm/">TiddlyWiki</a>.</p>
+</blockquote>
+<p>is like a choose your own adventure.</p>
+<aside class="notes">
+<p>Acknowledge making a mistake is scary and not an adventure! There will be people to help though, through the NHS-R Community and people should definitely feel they can ask for help.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="when-in-doubt---make-it-private" class="slide level2">
+<h2>When in doubt - make it private</h2>
+<p>You can change the visibility of a repository through the <code>Settings</code> tab in GitHub</p>
+<p>Remember you may need your 2FA app for authentication if that’s set up</p>
 </section>
 <section id="end-session" class="slide level2">
 <h2>End session</h2>
+<h3 id="acknowledgements">Acknowledgements</h3>
+<p>CDU Data Science Team blog <a href="https://cdu-data-science-team.github.io/team-blog/posts/2022-11-09-when-things-go-wrong-in-github/">When things go wrong in GitHub</a></p>
 
 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMzEyIDUyOC45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMzEyIDUyOC45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6dXJsKCNTVkdJRF8xXyk7fQoJLnN0MXtmaWxsOnVybCgjU1ZHSURfMDAwMDAxMjQ4NTc0NTU2MDM5MDA0NTE5NzAwMDAwMTQzMjgyMTU1MDk3MjE5Njg1NDRfKTt9Cgkuc3Qye2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDEzOTI5NTUxMjc5MjM1OTI0NzczMDAwMDAwNDgzOTU0MDMyMzk0MzkxMDI3NV8pO30KCS5zdDN7ZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDU3ODY0ODAyMDAyMzM2MDUyNzAwMDAwMDA3MjMyNDE5MjUxMjUwOTkxNzQ3Xyk7fQoJLnN0NHtmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDY0NjM0NDk5ODA1MTYwMDkwNDAwMDAwMTg0MDk3Njk1ODA2MDM4NjczMTJfKTt9Cgkuc3Q1e2ZpbGw6dXJsKCNTVkdJRF8wMDAwMDE3MzEyMDU3MDU3OTU4MzkxMDYxMDAwMDAwNjM5MjkyNDk2NDQzNDI2NTAwN18pO30KCS5zdDZ7ZmlsbDojQUZBRkFGO30KPC9zdHlsZT4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjMxMy42NTE3IiB5MT0iOTc2LjI5MiIgeDI9IjMxNC4yNjkzIiB5Mj0iOTc1LjY3NDQiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoNzIxLjA5NCAwIDAgLTQ4Mi45MzcgLTIyNTM2MC4zOTA2IDQ3MTUwNS4xMjUpIj4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojQ0NDRUQwIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6Izg0ODQ4QyIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDM0LjYsMzE1LjhjLTEyMywwLTIyMi43LTY2LjgtMjIyLjctMTQ5LjFjMC04Mi40LDk5LjctMTQ5LjEsMjIyLjctMTQ5LjFjMTIzLDAsMjIyLjcsNjYuOCwyMjIuNywxNDkuMQoJCUMxMjU3LjMsMjQ5LjEsMTE1Ny42LDMxNS44LDEwMzQuNiwzMTUuOHogTTEwNjguNyw3NS45Yy05My41LDAtMTY5LjMsNDUuNi0xNjkuMywxMDJzNzUuOCwxMDIsMTY5LjMsMTAyCgkJYzkzLjUsMCwxNjIuNS0zMS4yLDE2Mi41LTEwMkMxMjMxLjIsMTA3LjEsMTE2Mi4yLDc1LjksMTA2OC43LDc1Ljl6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDQ3MDQxMjEzOTIxMjE2NjU3NTUwMDAwMDE1MjAxMTI0OTc1MjMwMTY4NDU5XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMTMuODg4MiIgeTE9Ijk3Ni4zNzk0IiB4Mj0iMzE0LjUwNTciIHkyPSI5NzUuNzYxOCIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzOTggMCAwIC00MDYuMTI0IC0xMjM5NDcuNDkyMiAzOTY2NTcuMDYyNSkiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDA0NzA0MTIxMzkyMTIxNjY1NzU1MDAwMDAxNTIwMTEyNDk3NTIzMDE2ODQ1OV8pOyIgZD0iTTExNTEuMSwyNDguNmMwLDAsMTMuNSw0LjEsMjEuMyw4CgkJYzIuNywxLjQsNy40LDQuMSwxMC44LDcuN2MzLjMsMy41LDQuOSw3LjEsNC45LDcuMWw1My4xLDg5LjZsLTg1LjgsMGwtNDAuMS03NS40YzAsMC04LjItMTQuMS0xMy4zLTE4LjJjLTQuMi0zLjQtNi00LjYtMTAuMi00LjYKCQljLTIuOSwwLTIwLjQsMC0yMC40LDBsMCw5OC4ybC03NiwwVjExMC4ySDExNDhjMCwwLDY5LjUsMS4zLDY5LjUsNjcuNFMxMTUxLjEsMjQ4LjYsMTE1MS4xLDI0OC42eiBNMTExOC4xLDE2NC42bC00NiwwbDAsNDIuNgoJCWw0NiwwYzAsMCwyMS4zLTAuMSwyMS4zLTIxLjdDMTEzOS40LDE2My40LDExMTguMSwxNjQuNiwxMTE4LjEsMTY0LjZ6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMTQ5MzYxNzQ1NzY4NjIwNjkwOTQwMDAwMDAzMTU5MzU0MTcxOTQwMTgzOTkzXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI1Ny43MDY4IiB5MT0iMjM0LjU1MTkiIHgyPSIyOTUuNTA2OSIgeTI9IjIzNC41NTE5Ij4KCQk8c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMzM2Q0IzIi8+CgkJPHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzFDNURBOSIvPgoJPC9saW5lYXJHcmFkaWVudD4KCTxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMDAwMDAxNDkzNjE3NDU3Njg2MjA2OTA5NDAwMDAwMDMxNTkzNTQxNzE5NDAxODM5OTNfKTsiIGQ9Ik0yOTUuNSwzNTguNWgtNzcuN2wtODIuMy0xMjQuN3YxMjQuNwoJCUg1Ny43di0yNDhoNzcuN2w4Mi4zLDEyNi44VjExMC42aDc3LjdWMzU4LjV6Ii8+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzMzAuNTI1NSIgeTE9IjIzNC41NTE5IiB4Mj0iNTU5LjkyMDEiIHkyPSIyMzQuNTUxOSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDM4NDEwNTgxMzQyNTk3MDAxMDgwMDAwMDE3ODUxNTgzODY3NTQxMzg5NzU2Xyk7IiBkPSJNNTU5LjksMTEwLjZ2MjQ4aC03Ny43di05Ni43aC03My45djk2LjcKCQloLTc3Ljd2LTI0OGg3Ny43djg5LjNoNzMuOXYtODkuM0g1NTkuOXoiLz4KCQoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMDAwMDAwMzgzODA5Mzg5Mzk2NzU5NDQxNzAwMDAwMDUwOTg0NTgwODQ0OTk0MzA1NjBfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjU4Ny45MzQzIiB5MT0iMjMzLjY3NjQiIHgyPSI3ODYuNTA5IiB5Mj0iMjMzLjY3NjQiPgoJCTxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiMzMzZDQjMiLz4KCQk8c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojMUM1REE5Ii8+Cgk8L2xpbmVhckdyYWRpZW50PgoJPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8wMDAwMDAzODM4MDkzODkzOTY3NTk0NDE3MDAwMDAwNTA5ODQ1ODA4NDQ5OTQzMDU2MF8pOyIgZD0iTTc3NS41LDMyMy45Yy03LjQsMTEuNC0xOCwyMC41LTMyLDI3LjEKCQljLTE0LDYuNy0zMC43LDEwLTUwLjEsMTBjLTI5LjcsMC01NC4xLTYuOS03My40LTIwLjhjLTE5LjMtMTMuOS0yOS43LTM0LjMtMzEuMy02MS4xaDgyLjdjMS4yLDE0LjIsNy41LDIxLjQsMTguOSwyMS40CgkJYzQsMCw3LjItMS4xLDkuNi0zLjJjMi41LTIuMSwzLjctNS4xLDMuNy05LjFjMC01LjgtMy0xMC40LTguOS0xMy44Yy02LTMuNC0xNS42LTcuMy0yOC45LTExLjdjLTE1LjYtNS4xLTI4LjctMTAuNC0zOS0xNS44CgkJYy0xMC40LTUuNC0xOS40LTEzLjMtMjcuMS0yMy44Yy03LjctMTAuNS0xMS42LTI0LjItMTEuNi00MWMwLTE2LjEsNC4xLTI5LjgsMTIuNC00MS4yYzguMy0xMS4zLDE5LjYtMTkuOSwzNC0yNS43CgkJYzE0LjQtNS44LDMwLjUtOC44LDQ4LjUtOC44YzI5LjYsMCw1My4yLDYuOSw3MC43LDIwLjdjMTcuNSwxMy44LDI3LjEsMzMuNiwyOC43LDU5LjVoLTgzLjdjLTEuMi0xMy4xLTYuNS0xOS42LTE2LjEtMTkuNgoJCWMtMy4zLDAtNiwxLTguMSwzYy0yLjEsMi0zLjIsNS0zLjIsOC45YzAsNS40LDMsOS44LDguOSwxMy4xYzYsMy40LDE1LjIsNy4zLDI3LjgsMTEuN2MxNS45LDUuNiwyOSwxMS4yLDM5LjQsMTYuNgoJCWMxMC40LDUuNSwxOS41LDEzLjUsMjcuMywyNC4yYzcuOCwxMC42LDExLjcsMjQuMiwxMS43LDQwLjhDNzg2LjUsMjk5LjYsNzgyLjgsMzEyLjQsNzc1LjUsMzIzLjl6Ii8+CjwvZz4KPGc+CgkKCQk8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI4MjEuOTYwOSIgeTE9IjIzOC45MjExIiB4Mj0iOTYxLjc2MDciIHkyPSIyMzguOTIxMSI+CgkJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzMzNkNCMyIvPgoJCTxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiMxQzVEQTkiLz4KCTwvbGluZWFyR3JhZGllbnQ+Cgk8cGF0aCBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzAwMDAwMDgyMzM5OTc3NDIwNjA1OTE4NTUwMDAwMDA0NTA4NjY0MzY1NDkxNDU0MDg1Xyk7IiBkPSJNOTYxLjgsMjExLjV2NTQuOUg4MjJ2LTU0LjlIOTYxLjh6Ii8+CjwvZz4KPGc+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNMTM2LjIsNDIyLjFjOC4xLDYuNCwxMy41LDE1LDE2LjEsMjUuOWgtMjAuOGMtMi4yLTUuMy01LjUtOS41LTEwLTEyLjZjLTQuNS0zLjEtMTAtNC42LTE2LjMtNC42CgkJYy01LjIsMC0xMCwxLjMtMTQuMiwzLjljLTQuMiwyLjYtNy41LDYuNC05LjgsMTEuMmMtMi4zLDQuOS0zLjUsMTAuNi0zLjUsMTcuMWMwLDYuNSwxLjIsMTIuMSwzLjUsMTdjMi4zLDQuOSw1LjYsOC42LDkuOCwxMS4yCgkJYzQuMiwyLjYsOC45LDMuOSwxNC4yLDMuOWM2LjQsMCwxMS44LTEuNSwxNi4zLTQuNmM0LjUtMy4xLDcuOS03LjMsMTAtMTIuNmgyMC44Yy0yLjYsMTAuOS04LDE5LjYtMTYuMSwyNS45CgkJYy04LjEsNi40LTE4LjQsOS41LTMwLjcsOS41Yy05LjQsMC0xNy44LTIuMS0yNS02LjRjLTcuMi00LjMtMTIuOS0xMC4yLTE2LjgtMTcuOWMtNC03LjctNi0xNi40LTYtMjYuMWMwLTkuOCwyLTE4LjYsNi0yNi4yCgkJYzQtNy43LDkuNi0xMy42LDE2LjgtMTcuOWM3LjItNC4zLDE1LjYtNi40LDI1LjEtNi40QzExNy45LDQxMi42LDEyOC4xLDQxNS44LDEzNi4yLDQyMi4xeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTI4MC45LDQxOC42YzcuNSw0LjMsMTMuNSwxMC4zLDE3LjgsMThjNC4zLDcuNyw2LjUsMTYuNCw2LjUsMjYuMmMwLDkuNy0yLjIsMTguNS02LjUsMjYuMgoJCWMtNC4zLDcuOC0xMC4zLDEzLjgtMTcuOCwxOC4xYy03LjUsNC4zLTE1LjksNi41LTI1LjIsNi41Yy05LjMsMC0xNy42LTIuMS0yNS4yLTYuNWMtNy41LTQuMy0xMy41LTEwLjMtMTcuOC0xOC4xCgkJYy00LjMtNy44LTYuNS0xNi41LTYuNS0yNi4yYzAtOS43LDIuMi0xOC40LDYuNS0yNi4yYzQuMy03LjcsMTAuMy0xMy43LDE3LjgtMThjNy41LTQuMywxNS45LTYuNSwyNS4yLTYuNQoJCUMyNjUsNDEyLjIsMjczLjQsNDE0LjMsMjgwLjksNDE4LjZ6IE0yNDAuNCw0MzQuM2MtNC40LDIuNi03LjgsNi40LTEwLjMsMTEuM2MtMi41LDQuOS0zLjcsMTAuNi0zLjcsMTcuMmMwLDYuNSwxLjIsMTIuMywzLjcsMTcuMgoJCWMyLjUsNC45LDUuOSw4LjcsMTAuMywxMS4zYzQuNCwyLjYsOS41LDMuOSwxNS4zLDMuOWM1LjgsMCwxMC45LTEuMywxNS4zLTMuOWM0LjQtMi42LDcuOC02LjQsMTAuMy0xMS4zCgkJYzIuNS00LjksMy43LTEwLjYsMy43LTE3LjJjMC02LjUtMS4yLTEyLjMtMy43LTE3LjJjLTIuNS00LjktNS45LTguNy0xMC4zLTExLjNjLTQuNC0yLjYtOS41LTMuOS0xNS4zLTMuOQoJCUMyNDkuOSw0MzAuNCwyNDQuOCw0MzEuNywyNDAuNCw0MzQuM3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik00NjguOSw0MTQuN3Y5Ny45aC0xOS42di02OC4zbC0yNS4xLDY4LjNINDA3bC0yNS4xLTY4djY4aC0xOS44di05Ny45aDI0bDI5LjcsNzMuNmwyOS4yLTczLjZINDY4Ljl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNNjM1LjYsNDE0Ljd2OTcuOUg2MTZ2LTY4LjNsLTI1LjEsNjguM2gtMTcuMWwtMjUuMS02OHY2OGgtMTkuOHYtOTcuOWgyNGwyOS43LDczLjZsMjkuMi03My42SDYzNS42eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTcxNC43LDQxMy42djU4LjFjMCw3LjgsMS43LDEzLjYsNS4xLDE3LjVjMy40LDMuOSw4LjMsNS44LDE0LjgsNS44YzYuNCwwLDExLjItMS45LDE0LjctNS44CgkJYzMuNC0zLjksNS4xLTkuNyw1LjEtMTcuNXYtNTguMWgxOS42djU4LjFjMCw5LjItMS43LDE2LjktNS4xLDIzLjJjLTMuNCw2LjMtOC4xLDExLTE0LjIsMTQuMWMtNiwzLjEtMTIuOSw0LjYtMjAuNSw0LjYKCQljLTExLjksMC0yMS40LTMuNi0yOC41LTEwLjdjLTcuMS03LjEtMTAuNy0xNy41LTEwLjctMzEuM3YtNTguMUg3MTQuN3oiLz4KCTxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik05MTcuNCw1MTIuNmgtMTkuOGwtNDQuMy02Ny4zdjY3LjNoLTE5Ljh2LTk5aDE5LjhsNDQuMyw2Ny45di02Ny45aDE5LjhWNTEyLjZ6Ii8+Cgk8cGF0aCBjbGFzcz0ic3Q2IiBkPSJNOTk3LjIsNDEzLjZ2OTloLTE5Ljh2LTk5SDk5Ny4yeiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTExMjQuNSw0MTMuNnYxNS43aC0yNy4zdjgzLjNoLTE5Ljh2LTgzLjNoLTI3LjJ2LTE1LjdIMTEyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0NiIgZD0iTTEyNTcuMyw0MTMuNmwtMzMuNSw2NC40djM0LjZoLTE5Ljl2LTM0LjZsLTMzLjctNjQuNGgyMi43bDIxLDQzLjNsMjEtNDMuM0gxMjU3LjN6Ii8+CjwvZz4KPC9zdmc+Cg==" class="slide-logo r-stretch"><div class="footer footer-default">
 
@@ -2203,44 +2236,6 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

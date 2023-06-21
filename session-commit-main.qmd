@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - Commit to main and undo commit to main"
+subtitle: "Session - Commit to main (and undo last commit!)"
 author: "Zoë Turner"
 format:
   revealjs:
@@ -41,23 +41,14 @@ git push
 
 ## Accidentally committed 
 
-::: {.incremental}
-- If you commit by accident to any branch, but particularly main, you can undo the last commit
-- You can undo any number of last commits!
-- This has to be done in the Terminal ($)
-:::
+If you commit by accident to any branch, but particularly main, you can undo the last commit
 
-To undo the commit but keep the changes
+You can undo any number of last commits!
+
+This has to be done in the Terminal ($)
 
 ```{bash}
 git reset --soft HEAD~1
 ```
-
-To remove the commit and changes
-
-```{bash}
-git reset --hard HEAD~1
-```
-
 
 ## End session

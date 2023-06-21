@@ -17,7 +17,8 @@ development series.
 Get set up on a computer (the Posit Cloud is preset)
 
 [Introduction](https://nhs-r-community.github.io/intro-git-github/session-intro.html#/title-slide) -
-What is version control? [Setting
+What is version control?  
+[Setting
 up](https://nhs-r-community.github.io/intro-git-github/session-setup.html#/title-slide) -
 Getting started with Git and GitHub
 
@@ -26,19 +27,20 @@ Getting started with Git and GitHub
 [Version
 Control](https://nhs-r-community.github.io/intro-git-github/session-version-control.html#/title-slide) -
 What is Git/GitHub and how they relate to RStudio along with the ups and
-downs of Git
+downs of Git  
 [Workflow](https://nhs-r-community.github.io/intro-git-github/session-version-workflow.html#/title-slide) -
 Brief introduction to the Git and GitHub terminology
 
 [Using R packages {usethis} and
 {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) -
-start work, make a commit and pull request [Merge
+start work, make a commit and pull request  
+[Merge
 conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) -
 repeat steps from previous session and create a conflict merge
 
 session-commit-main
 
-session-cloning
+session-fork-clone - Working from existing repositories
 
 [{usethis}
 errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) -
