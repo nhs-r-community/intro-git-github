@@ -12,6 +12,8 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 package](http://bit.ly/pkg-dev-3) as part of the one-hour package
 development series.
 
+## Part 1
+
 - [Prework](https://nhs-r-community.github.io/intro-git-github/session-prework.html#/title-slide) -
   Get set up on a computer  
 - [Introduction](https://nhs-r-community.github.io/intro-git-github/session-intro.html#/title-slide) -
@@ -20,7 +22,11 @@ development series.
   up](https://nhs-r-community.github.io/intro-git-github/session-setup.html#/title-slide) -
   Getting started with Git and GitHub
 
+## Break
+
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
+
+## Part 2
 
 - [Version
   Control](https://nhs-r-community.github.io/intro-git-github/session-version-control.html#/title-slide) -
@@ -42,6 +48,8 @@ development series.
 
 \[TODO\] session-fork-clone  
 session-pause-resume
+
+## Appendix slides
 
 [{usethis}
 errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) -
