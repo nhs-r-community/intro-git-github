@@ -37,10 +37,11 @@ development series.
 - [Commit to main (and undo last
   commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide)
 - [Undo last
-  merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit#/title-slide) -
+  merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) -
   Working from existing repositories
 
-TODO session-fork-clone session-pause-resume
+\[TODO\] session-fork-clone  
+session-pause-resume
 
 [{usethis}
 errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) -

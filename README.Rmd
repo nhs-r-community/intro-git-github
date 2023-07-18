@@ -31,10 +31,10 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 - [Using R packages {usethis} and {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) - start work, make a commit and pull request  
 - [Merge conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) - repeat steps from previous session and create a conflict merge  
 - [Commit to main (and undo last commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide)
-- [Undo last merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit#/title-slide) - Working from existing repositories
+- [Undo last merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) - Working from existing repositories
 
-TODO
-session-fork-clone
-session-pause-resume
+[TODO]
+session-fork-clone  
+session-pause-resume  
 
 [{usethis} errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) - typical errors from set up issues  
