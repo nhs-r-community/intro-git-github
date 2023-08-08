@@ -39,25 +39,37 @@ Right click to copy on a Terminal line
 - Download the installer from [https://git-scm.com/downloads](https://git-scm.com/downloads) 
 - Run keeping all the default settings. 
 
-If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press `Ctrl + Alt + Delete`; select Task Manager; find Git for Windows installer and close).
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Installer hangs at 100%
 
-## Installing Git
+If the installer hangs with the progress bar at 100%, close the installer with Task Manager (press `Ctrl + Alt + Delete`;  
+select Task Manager;  
+find Git for Windows installer and close).
+:::
+
+
+## Connecting RStudio to Git
 
 - Open RStudio
 - In the menus go to `Tools > Global Options > Git/SVN`
-- Check RStudio has found git under "Git executable:" 
+- Check RStudio has found Git under "Git executable:" 
 
-You may need to click `Browse` and find the git executable
+You may need to click `Browse` and find the Git executable
 
-It may be under `C:\Users\username\AppData\Local\Programs\Git\` - remember if file extensions are hidden it will show as git rather than git.exe. Restart RStudio before trying to use git
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Where to find the git.exe
+It may be under `C:\Users\username\AppData\Local\Programs\Git\` - remember if file extensions are hidden it will show as git rather than git.exe.  
+Restart RStudio before trying to use git.
+:::
+
 
 ## GitHub
 
 Register a GitHub account at [github.com](https://github.com/).
 
 - Suggest to incorporate your actual name/reuse your username from other contexts (like Social Media)
-- Pick a username you will be comfortable revealing to your future boss
-- Shorter is better than longer
+- Pick a username you will be comfortable revealing to your boss
+- Shorter is better
 - Be as unique as possible in as few characters as possible
 - Make it timeless
 - Avoid words laden with special meaning in programming
