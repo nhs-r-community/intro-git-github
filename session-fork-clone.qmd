@@ -1,0 +1,112 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Getting copies of existing repositories (fork and clone)"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Existing repositories
+
+All this course has been about you creating a new repository but what about collaboration with existing projects?
+
+::: incremental
+-   your own repository on a new computer (clone)
+-   a repository from your team which you are a member (clone)
+-   a repository from someone or somewhere that you don't have rights to change (fork)
+:::
+
+. . .
+
+```{r}
+usethis::create_from_github(repo_spec = "nhs-r-community/r4ds-ed2-exercise-solutions")
+```
+
+::: {.callout-warning collapse="false" appearance="default" icon="true"}
+## Cloud specific folder structure
+
+On Posit Cloud the project gets saved in \`Cloud\> home \> r99999 (similar) \> r4ds-ed2-exercise-solutions
+:::
+
+## The benefits of {usethis}
+
+Using the function `create_from_github()` means that it:
+
+-   Automatically checks if this would be a clone or a fork!
+-   Automatically goes to the main working directory, mine is in `C:/Users/zoe.turner`
+-   Opens up a new RStudio session
+
+## Clone (access) and Fork (no access)
+
+Cloned message:
+
+``` markdown
+✔ Setting `fork = FALSE`
+✔ Creating 'C:/Users/zoe.turner/r4ds-ed2-exercise-solutions/'
+✔ Cloning repo from 'https://github.com/nhs-r-community/r4ds-ed2-exercise-solutions.git' into 'C:/Users/zoe.turner/r4ds-ed2-exercise-solutions'
+✔ Setting active project to 'C:/Users/zoe.turner/r4ds-ed2-exercise-solutions'
+ℹ Default branch is 'main'
+✔ Opening 'C:/Users/zoe.turner/r4ds-ed2-exercise-solutions/' in new RStudio session
+✔ Setting active project to '<no active project>'
+```
+
+. . .
+
+Forked message (will also appear in your GitHub):
+
+``` markdown
+✔ Setting `fork = TRUE`
+✔ Creating 'C:/Users/zoe.turner/nhspy-plotthedots/'
+✔ Forking 'nhs-pycom/nhspy-plotthedots'
+✔ Waiting for the fork to finalize before cloning
+✔ Cloning repo from 'https://github.com/Lextuga007/nhspy-plotthedots.git' into 'C:/Users/zoe.turner/nhspy-plotthedots'
+✔ Setting active project to 'C:/Users/zoe.turner/nhspy-plotthedots'
+ℹ Default branch is 'main'
+✔ Adding 'upstream' remote: 'https://github.com/nhs-pycom/nhspy-plotthedots.git'
+✔ Pulling changes from 'upstream/main'.
+✔ Setting remote tracking branch for local 'main' branch to 'upstream/main'
+✔ Writing 'nhspy-plotthedots.Rproj'
+✔ Adding '.Rproj.user' to '.gitignore'
+✔ Opening 'C:/Users/zoe.turner/nhspy-plotthedots/' in new RStudio session
+✔ Setting active project to '<no active project>'
+```
+
+## Alternatives - Cloning in GitHub
+
+Select the green button for `<> Code` and it will give you an option to clone
+
+This course has used `https` and the copy button to the right takes the whole code
+
+![](img/show-clone-github.PNG){fig-alt="Screenshot of the GitHub code menu extended to see the Clone, Open with GitHub Desktop and Download ZIP options"}
+
+## Forking in GitHub - then needs Cloning!
+
+`Fork` to your own repository and then `Clone` from there to your computer:
+
+![](img/show-fork-github.PNG){fig-alt="Screenshot of GitHub with the Fork link highlighted"}
+
+## In RStudio
+
+With the copied HTTPS url, in RStudio you will need to start a new Project and use the third option (possibly ignored until now!) for versioning:
+
+![](img/new-project-wizard.PNG){fig-alt="Screenshot of the 3 options wizard in RStudio for creating a new project"}
+
+::: {.callout-warning collapse="false" appearance="default" icon="true"}
+## Posit Cloud is already a project!
+
+-   Creating a project on the Cloud isn't possible because **it is** a project
+-   Even in RStudio it's not possible to put a project in another project.
+:::
+
+## End session

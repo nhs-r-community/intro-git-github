@@ -1,0 +1,203 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Pull Requests"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## Pushing to the remote (GitHub)
+
+We want to `push` the copy branch to GitHub, make a `pull request` to `merge` into main
+
+```{r}
+usethis::pr_push()
+```
+
+This open the pull request in GitHub/a browser, select the `Create Pull Request` button
+
+::: {.callout-note collapse="false" appearance="default" icon="true"}
+## Draft pull requests
+
+-   For public repositories it's possible to change the pull request to a draft.
+-   In GitHub click on the down arrow on the green button for `Create pull request` and select Draft
+-   Click the green button again to make the pull request
+:::
+
+## Extra unnecessary step?
+
+-   Creating a pull request to the `main` branch can be seen as an extra step, particularly when you are working alone
+
+::: incremental
+-   But if you are working with others or the main is a *clean* working branch you need to protect it
+-   Pull requests will be where your *merge conflicts* will be highlighted
+-   People can see you are working on things
+-   You have a remote copy of your work if anything were to happen to your local computer!
+-   Reverting (undoing) a pull request is really easy in GitHub, even more so if you have a lot of commits
+:::
+
+## Options to merge - default
+
+There are three options the default being
+
+`Create a merge commit` creates a new `merge commit` which isn't very descriptive in the name
+
+> Merge pull request #1 from Letxuga007/new_work
+
+but is recommended as an easier way to debug for when things get muddled
+
+## Squashing
+
+`Squash and merge` details multiple commits in one
+
+> New work (#1) \* First commit for quarto document \* Removed author
+
+which is a nice way to keep all the commit messages but messages can get long
+
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+## Squashing
+
+-   Atomic committing is a practice in Git versioning where each distinct step is committed
+-   Squashing is only used in this this practice if things are very closely related:\
+    \# updated titles\
+    \# renamed titles\
+    \# correct spelling in title
+:::
+
+## Rebase
+
+`Rebase and merge` keeps all the commits as you created them in a linear way
+
+The history is more readable but can be tougher to resolve conflicts
+
+![Screenshot of the commits from a rebase merge](img/rebase_commit_history.PNG)
+
+::: notes
+When to use merge versus rebase https://www.gitkraken.com/learn/git/problems/git-rebase-vs-merge
+
+Rebase seems to be incredibly useful if there are many people working on a project and can see the branches in a visual way. GitHub only presents commits in a linear way anyway so this may not be necessary for many analytical type repositories.
+:::
+
+## Let's pause!
+
+Sometimes you need to go back to `main` to get changes from colleagues or create a new branch:
+
+```{r}
+usethis::pr_pause()
+```
+
+This does a few things
+
+``` markdown
+✔ Setting active project to '/cloud/project'
+✔ Switching back to the default branch.
+✔ Checking that local branch 'new_work' has the changes in 'origin/new_work'
+✔ Switching back to default branch ('main').
+✔ Pulling changes from 'origin/main'
+```
+
+## Resuming your PR
+
+First find the PR to work on:
+
+```{r}
+usethis::pr_fetch()
+```
+
+Gives you details of what is open as a PR:
+
+``` markdown
+✔ Setting active project to '/cloud/project'
+ℹ No PR specified ... looking up open PRs.
+Which PR are you interested in? (0 to exit) 
+
+1: #1 (@Letxuga007): 'New work'
+```
+
+. . .
+
+To resume then select the number or if you know the PR before then
+
+```{r}
+usethis::pr_fetch(1)
+```
+
+## Finish with the PR
+
+-   If the PR is set to Draft then, in GitHub, set to review
+-   If the PR was not a Draf the button `Merge pull request` will be available straight away
+-   Return to RStudio and type
+
+```{r}
+usethis::pr_finish()
+```
+
+Several things gets tidied up all in one function
+
+. . .
+
+``` markdown
+✔ Switching back to default branch ('main').
+✔ Pulling changes from 'origin/main'
+✔ Deleting local 'new_work' branch.
+✔ PR 'Letxuga007/project/#1' has been merged, deleting remote branch 'origin/new_work'
+```
+## You might want to discard a PR
+
+If you are working on something and change your mind
+
+```{r}
+usethis::pr_forget()
+```
+
+when in the branch you want to discard:
+
+```markdown
+✔ Switching back to default branch ('main').
+✔ Pulling changes from 'origin/main'
+✔ Deleting local 'mistake-branch' branch.
+```
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## PR needs to be tidied in GitHub
+- Because local is different to remote you will need to close any PR on GitHub
+:::
+
+## Local and remote branches
+
+Local and Remote branches are distinct things so although `new_work` branch has been deleted and the remote has been merged, the connection in RStudio remains
+
+![](img/branch-link-rstudio.PNG){fig-alt="Screenshot of the drop down of branches in the RStudio git pane where under the greyed out (REMOTE: ORIGIN) new_work can be seen"}
+
+To tidy, in the Terminal type:
+
+```{bash}
+git remote prune origin
+```
+
+## End session
+
+## Acknowledgements
+
+[Happy Git and GitHub](https://happygitwithr.com/) for the useR by Jenny Bryan
+
+[Pull Request Flow with usethis](https://www.garrickadenbuie.com/blog/pull-request-flow-usethis/?interactive=) by Garrick Aden-Buie
+
+## End session
+
+## Acknowledgements
+
+[Happy Git and GitHub](https://happygitwithr.com/) for the useR by Jenny Bryan
+
+[Pull Request Flow with usethis](https://www.garrickadenbuie.com/blog/pull-request-flow-usethis/?interactive=) by Garrick Aden-Buie

@@ -12,7 +12,7 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 package](http://bit.ly/pkg-dev-3) as part of the one-hour package
 development series.
 
-## Part 1 - setting up and explaining Git/GitHub generally
+## Part 1
 
 - [Prework](https://nhs-r-community.github.io/intro-git-github/session-prework.html#/title-slide) -
   Get set up on a computer  
@@ -22,7 +22,7 @@ development series.
   up](https://nhs-r-community.github.io/intro-git-github/session-setup.html#/title-slide) -
   Getting started with Git and GitHub
 
-## Break
+### Break
 
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
 
@@ -31,18 +31,21 @@ development series.
   What is Git/GitHub and how they relate to RStudio along with the ups
   and downs of Git  
 - [Workflow](https://nhs-r-community.github.io/intro-git-github/session-version-workflow.html#/title-slide) -
-  Brief introduction to the Git and GitHub terminology
-
-## Part 2 - Get coding
-
-- [Using R packages {usethis} and
+  Brief introduction to the Git and GitHub terminology  
+- [Workflow with {usethis} and
   {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) -
-  start work, make a commit and pull request  
+  start work and making a commit
+
+## Part 2
+
+- [Pull Requests
+  (PRs)](https://nhs-r-community.github.io/intro-git-github/session-pull-requests.html#/title-slide) -
+  making pull request, pausing, resuming and finishing  
 - [Merge
   conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) -
   repeat steps from previous session and create a conflict merge
 
-## Break
+### Break
 
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
 
@@ -52,8 +55,7 @@ development series.
   merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) -
   Working from existing repositories
 
-\[TODO\] session-fork-clone  
-session-pause-resume
+\[TODO\] session-fork-clone
 
 ## Appendix slides
 
