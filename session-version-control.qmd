@@ -19,7 +19,13 @@ embed-resources: true
 
 ## Git - the version control system
 
-> “Track Changes” features from Microsoft Word on steroids
+> “Track Changes” features from Microsoft Word
+
+. . .
+
+> on steroids
+
+. . .
 
 Source: [Happy Git and GitHub for the useR](https://happygitwithr.com/big-picture.html?q=version%20control#big-picture) by Jenny Bryan
 
@@ -57,20 +63,22 @@ Git may not really make sense if you are working on your own
 ## Reasons why Git and GitHub hurts
 
 ::: incremental
-- requires a completely new and longer workflow to work
+- requires a completely new and longer workflow to your analysis
 - collaborating with others can cause **merge conflicts**
 - you can cause your own merge conflicts mess (we will do that in this course!)
 :::
 
+. . .
+
 > this is not a one-time pain, this could be a dull ache for a long time
 
-Source: Happy Git and GitHub for the useR - [Is tit going to hurt](https://happygitwithr.com/big-picture.html?q=version%20control#is-it-going-to-hurt) by Jenny Bryan
+Source: Happy Git and GitHub for the useR - [Is it going to hurt](https://happygitwithr.com/big-picture.html?q=version%20control#is-it-going-to-hurt) by Jenny Bryan
 
 ## So why bother?
 
 ::: incremental
 - Personal exposure: sharing publicly can feel scary because you assume people will judge, but you'll soon find the judgement is positive as people are grateful for your sharing
-- Team exposure: there is a lot of repeated code for tasks duplicated across many organisations
+- Team exposure: there is a lot of repeated code for tasks duplicated across many organisations (particularly in the public sector)
 - Be keener: you can use other people's work (with the right [licences](https://nhs-r-community.github.io/statements-on-tools/open-code-in-the-nhs.html#licenceslicenses)) and keep up to date with all the work through GitHub for any changes, developments or improvements
 - Collaboration: we can work together! 
 :::
@@ -88,8 +96,9 @@ Source: Happy Git and GitHub for the useR - [Is tit going to hurt](https://happy
 :::incremental
 - Uses Git but is a separate platform (other services are available)
 - It's a web hosted site for public and private repositories
-- GitHub is a very friendly user interface and is being updated with new features.
+- GitHub is a very friendly user interface and is being updated with new features
 - Individuals and [organisations](https://github.com/nhs-r-community) can have accounts
+- You can have public and private repositories
 :::
 
 ## RStudio benefits
@@ -97,15 +106,8 @@ Source: Happy Git and GitHub for the useR - [Is tit going to hurt](https://happy
 As with so many things, other IDEs (Integrated development environment) are available
 
 :::incremental
-- Never having to leave one program to clean data, visualise it and do statistics
+- Never having to leave one program: clean data, visualise it and do statistics in one place!
 - Also allows version control and use of Git/GitHub without having to open another program
-:::
-
-## R/RStudio things that are needed
-
-::: incremental
-- A folder for the work
-- [Set up a project](https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide) so there is a `.Rproj` bookmark in the folder
 :::
 
 ## End session

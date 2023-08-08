@@ -20,7 +20,7 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 
 [Setting up your system](http://bit.ly/pkg-dev-2) and [Your first package](http://bit.ly/pkg-dev-3) as part of the one-hour package development series.  
 
-## Part 1
+## Part 1 - setting up and explaining Git/GitHub generally
 
 - [Prework](https://nhs-r-community.github.io/intro-git-github/session-prework.html#/title-slide) - Get set up on a computer  
 - [Introduction](https://nhs-r-community.github.io/intro-git-github/session-intro.html#/title-slide) - What is version control?  
@@ -30,12 +30,19 @@ Introduction to Git and GitHub training based on the Forwards workshops:
 
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide) 
 
-## Part 2
-
 - [Version Control](https://nhs-r-community.github.io/intro-git-github/session-version-control.html#/title-slide) - What is Git/GitHub and how they relate to RStudio along with the ups and downs of Git  
 - [Workflow](https://nhs-r-community.github.io/intro-git-github/session-version-workflow.html#/title-slide) - Brief introduction to the Git and GitHub terminology  
+
+
+## Part 2 - Get coding
+
 - [Using R packages {usethis} and {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) - start work, make a commit and pull request  
 - [Merge conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) - repeat steps from previous session and create a conflict merge  
+
+## Break
+
+[Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide) 
+
 - [Commit to main (and undo last commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide)
 - [Undo last merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) - Working from existing repositories
 

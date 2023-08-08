@@ -1219,7 +1219,7 @@ Zoë Turner
 </div>
 
 </section><section id="configure-git" class="slide level2"><h2>Configure Git</h2>
-<p>Configure <code>user.name</code> and <code>user.email</code>.</p>
+<p>Configure <code>user.name</code> and <code>user.email</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(usethis)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
@@ -1233,6 +1233,7 @@ Zoë Turner
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A lot of information will appear in the RStudio Console!</p>
+<div class="fragment">
 <pre><code>Git config (global)
 • Name: &lt;unset&gt;
 • Email: &lt;unset&gt;
@@ -1252,41 +1253,89 @@ GitHub
 Git repo for current project
 • Active usethis project: &#39;/cloud/project&#39;
 ℹ Active project is not a Git repo</code></pre>
+</div>
 </section><section id="vaccinate" class="slide level2"><h2>Vaccinate</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<blockquote>
+<div class="fragment">
 <p>Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it’s missing from your global Git config.</p>
-</blockquote>
+</div>
 </section><section id="personal-access-token" class="slide level2"><h2>Personal access token</h2>
 <ul>
 <li><p>Communicating with GitHub will require authentication</p></li>
 <li><p>Instead of typing in your username and password each time, use a <strong>PAT</strong> (personal access token)</p></li>
 </ul></section><section id="create-a-pat" class="slide level2"><h2>Create a PAT</h2>
 <ul>
-<li>Create a PAT</li>
+<li>To amend/delete existing tokens go to: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>
+</li>
 <li>Give the token a descriptive name like <code>connect-posit-github</code>
 </li>
-<li>Untick blue ticks (because this is on the cloud)</li>
 <li>Copy and also store this token somewhere (you won’t be able to see it again!)</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To amend/delete existing tokens go to: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>PAT tokens on the cloud</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>These will get deleted automatically at regular intervals</li>
+<li>For the purpose of the course this will need to be added a few times!</li>
+</ul>
+</div>
+</div>
+</div>
 </section><section id="store-your-pat" class="slide level2"><h2>Store your PAT</h2>
-<p>Put your PAT into the Git credential store</p>
+<p>When you use the following code you’ll get a prompt, copy the token with no quotes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Set the token to 7 days if you are using the cloud or use <code><a href="https://gitcreds.r-lib.org/reference/gitcreds_get.html">gitcreds::gitcreds_delete()</a></code> after the course for security.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Deleting a PAT</strong></p>
+</div>
+<div class="callout-content">
+<p>If you are using the Cloud or want to delete the PAT from your system use <code><a href="https://gitcreds.r-lib.org/reference/gitcreds_get.html">gitcreds::gitcreds_delete()</a></code></p>
+</div>
+</div>
+</div>
 </section><section id="starting-git-from-an-existing-project" class="slide level2"><h2>Starting Git from an existing project</h2>
 <p>To make our project a Git repository, or ‘repo’ on our local machine we use</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Note that Posit Cloud workspace <em>is</em> a project so you will see <code>git-project.Rproj</code> in the Files pane.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>A word on R Projects</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Git needs to be in an R Project to work in RStudio (it’s good practice to use them)</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a>✔ Initialising Git repo</span>
+<span id="cb8-2"><a href="#cb8-2"></a>Error: Path &#39;C:/Users/zoe.turner/OneDrive - Midlands and Lancashire CSU/Documents/&#39; does not appear to be inside a project or package.</span>
+<span id="cb8-3"><a href="#cb8-3"></a>Read more in the help for <span class="in">`proj_get()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The Cloud workspace <em>is</em> a project so already has the <code>.Rproj</code> file set up for Projects</li>
+</ul>
+</div>
+</div>
+</div>
 </section><section id="verbose-feedback" class="slide level2"><h2>Verbose feedback</h2>
 <pre><code>√ Initialising Git repo
 √ Adding &#39;.Rdata&#39;, &#39;.httr-oauth&#39;, &#39;.DS_Store&#39; to &#39;.gitignore&#39;
@@ -1298,7 +1347,19 @@ Is it ok to commit them?
 1: Yeah
 2: Absolutely not
 3: No</code></pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Changing selections</strong></p>
+</div>
+<div class="callout-content">
 <p>Choose the positive option (these change so might say <code>I agree</code> instead of <code>Yes</code>)</p>
+</div>
+</div>
+</div>
 </section><section id="initial-commit" class="slide level2"><h2>Initial commit</h2>
 <pre><code>√ Adding files
 √ Commit with message &#39;Initial commit&#39;
@@ -1308,13 +1369,15 @@ Restart now?
 1: Nope
 2: Definitely
 3: No</code></pre>
-<p>Choose the positive option</p>
-<p>The save workspace option to <code>.Rdata</code> can be either yes or no</p>
-<p>A new file for <code>.gitignore</code> will appear in the Files pane</p>
-</section><section id="connect-this-to-github" class="slide level2"><h2>Connect this to GitHub</h2>
+<ul>
+<li>Choose the positive option (which changes!)</li>
+<li>The save workspace option to <code>.Rdata</code> can be either no for this, more info at <a href="https://intro-r-rstudio.nhsrcommunity.com/session-rstudio.html#/tools-options-workspace">intro-r course</a>
+</li>
+<li>A new file for <code>.gitignore</code> will appear in the Files pane</li>
+</ul></section><section id="connect-this-to-github" class="slide level2"><h2>Connect this to GitHub</h2>
 <p>To create a copy on GitHub</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will open up the GitHub page in your default browser</p>
 </section><section id="message-about-ssh-and-https" class="slide level2"><h2>Message about ssh and https</h2>
@@ -1332,10 +1395,26 @@ Which git protocol to use? (enter 0 to exit)
 ✔ Pushing &#39;master&#39; branch to GitHub and setting &#39;origin/master&#39; as upstream branch
 ✔ Opening URL &#39;https://github.com/Lextuga007/project&#39;</code></pre>
 </section><section id="master-or-main" class="slide level2"><h2>master or main?</h2>
-<p>The branch is called <code>master</code> here as default but conventionally people have moved to <code>main</code> To rename this branch (in GitHub not locally)</p>
+<p>The branch is called <code>master</code> here as default but conventionally people have moved to <code>main</code> To rename this branch:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">&quot;master&quot;</span>, <span class="at">to =</span> <span class="st">&quot;main&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">&quot;master&quot;</span>, <span class="at">to =</span> <span class="st">&quot;main&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Details of where the change has occurred</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>This function changes GitHub (on the web) not your local project</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="changing-the-branch-name-locally" class="slide level2"><h2>Changing the branch name locally</h2>
 <p>Repeat the code and a different message appears</p>
 <pre><code>✖ It&#39;s weird that the current default branch for your local repo and the source repo are different:
   &#39;master&#39; (local) != &#39;main&#39; (source)
@@ -1347,7 +1426,7 @@ Are you sure you want to proceed?
 </section><section id="set-future-default-branches-to-main" class="slide level2"><h2>Set future default branches to main</h2>
 <p>This won’t affect other projects in the cloud but is useful on a computer</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_configure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_configure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="updating-historic-repositories" class="slide level2"><h2>Updating historic repositories</h2>
 <p>If you want to update a lot of old repository default branches from <code>master</code> to <code>main</code> this can be done using a <a href="https://www.garrickadenbuie.com/blog/branchmover/">Shiny app</a> built by Garrick Aden-Buie, Software Engineer for Shiny at Posit.</p>

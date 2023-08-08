@@ -19,7 +19,7 @@ embed-resources: true
 
 ## Configure Git
 
-Configure `user.name` and `user.email`.
+Configure `user.name` and `user.email`
 
 ```{r}
 library(usethis)
@@ -38,6 +38,8 @@ usethis::git_sitrep()
 ```
 
 A lot of information will appear in the RStudio Console!
+
+. . .
 
 ```
 Git config (global)
@@ -67,7 +69,9 @@ Git repo for current project
 usethis::git_vaccinate()
 ```
 
->Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it's missing from your global Git config.
+. . .
+
+Adds .DS_Store, .Rproj.user, .Rdata, .Rhistory, and .httr-oauth to your global (a.k.a. user-level) .gitignore. This is good practice as it decreases the chance that you will accidentally leak credentials to GitHub. git_vaccinate() also tries to detect and fix the situation where you have a global gitignore file, but it's missing from your global Git config.
 
 ## Personal access token
 
@@ -77,26 +81,33 @@ usethis::git_vaccinate()
 
 ## Create a PAT
 
-- Create a PAT
+- To amend/delete existing tokens go to: [https://github.com/settings/tokens](https://github.com/settings/tokens)
 - Give the token a descriptive name like `connect-posit-github`
-- Untick blue ticks (because this is on the cloud)
 - Copy and also store this token somewhere (you won't be able to see it again!)
 
 ```{r}
 usethis::create_github_token()
 ```
 
-To amend/delete existing tokens go to: [https://github.com/settings/tokens](https://github.com/settings/tokens)
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## PAT tokens on the cloud
+- These will get deleted automatically at regular intervals
+- For the purpose of the course this will need to be added a few times!
+:::
+
 
 ## Store your PAT
 
-Put your PAT into the Git credential store
+When you use the following code you'll get a prompt, copy the token with no quotes.
 
 ```{r}
 gitcreds::gitcreds_set()
 ```
 
-Set the token to 7 days if you are using the cloud or use `gitcreds::gitcreds_delete()` after the course for security.
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Deleting a PAT
+If you are using the Cloud or want to delete the PAT from your system use `gitcreds::gitcreds_delete()`
+:::
 
 ## Starting Git from an existing project
 
@@ -106,7 +117,18 @@ To make our project a Git repository, or 'repo' on our local machine we use
 usethis::use_git()
 ```
 
-Note that Posit Cloud workspace _is_ a project so you will see `git-project.Rproj` in the Files pane.
+:::{.callout-note collapse=false appearance='default' icon=true}
+## A word on R Projects
+- Git needs to be in an R Project to work in RStudio (it's good practice to use them)
+
+``` markdown
+✔ Initialising Git repo
+Error: Path 'C:/Users/zoe.turner/OneDrive - Midlands and Lancashire CSU/Documents/' does not appear to be inside a project or package.
+Read more in the help for `proj_get()`.
+```
+
+- The Cloud workspace _is_ a project so already has the `.Rproj` file set up for Projects
+:::
 
 ## Verbose feedback
 
@@ -123,7 +145,10 @@ Is it ok to commit them?
 3: No
 ```
 
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Changing selections
 Choose the positive option (these change so might say `I agree` instead of `Yes`)
+:::
 
 ## Initial commit
 
@@ -138,11 +163,9 @@ Restart now?
 3: No
 ```
 
-Choose the positive option
-
-The save workspace option to `.Rdata` can be either yes or no
-
-A new file for `.gitignore` will appear in the Files pane
+- Choose the positive option (which changes!)
+- The save workspace option to `.Rdata` can be either no for this, more info at [intro-r course](https://intro-r-rstudio.nhsrcommunity.com/session-rstudio.html#/tools-options-workspace)
+- A new file for `.gitignore` will appear in the Files pane
 
 ## Connect this to GitHub
 
@@ -181,11 +204,19 @@ Choose 2 at the moment.
 ## master or main?
 
 The branch is called `master` here as default but conventionally people have moved to `main`
-To rename this branch (in GitHub not locally)
+To rename this branch:
 
 ```{r}
 usethis::git_default_branch_rename(from = "master", to = "main")
 ```
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Details of where the change has occurred
+- This function changes GitHub (on the web) not your local project
+:::
+
+
+## Changing the branch name locally
 
 Repeat the code and a different message appears
 
