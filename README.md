@@ -50,12 +50,14 @@ development series.
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
 
 - [Commit to main (and undo last
-  commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide)
+  commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide) -
+  how committing is possible to the main and undo last commits
 - [Undo last
-  merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) -
-  Working from existing repositories
-
-\[TODO\] session-fork-clone
+  merge](https://intro-git-github.nhsrcommunity.com/session-undo-merge.html#/title-slide) -
+  undoing a merge (reverting a pull request)
+- [Existing
+  repositories](https://intro-git-github.nhsrcommunity.com/session-fork-clone.html#/title-slide) -
+  Getting copies of existing repositories
 
 ## Appendix slides
 
