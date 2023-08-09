@@ -1,0 +1,62 @@
+---
+title: "Introduction to Git and GitHub"
+title-slide-attributes: 
+  data-background-color: "#43464B"
+subtitle: "Session - Undo last merge"
+author: "Zoë Turner"
+format:
+  revealjs:
+    theme: [default, nhsr-quarto.scss]
+    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
+    code-link: true
+    css: nhsr-quarto.scss
+    preview-links: true
+execute: 
+  echo: true
+  eval: false
+embed-resources: true  
+---
+
+## The benefit of working in increments
+
+Working in small chunks, committing and using pull requests means that there are more points to revert back to if things go wrong
+
+In GitHub, find the pull request and at the bottom is a button `Revert` and this doesn't disappear over time
+
+## Revert button
+
+![](img/github-revert-pr.PNG){fig-alt="Screenshot of a day old GitHub Pull Request with the Revert button highlighted"}
+
+## History of mistakes
+
+-   Using `Revert` in GitHub (and other ways to undo work) creates a new commit
+
+::: incremental
+-   This means that your commit history is a record of all your work, even mistakes
+-   It's absolutely ok and not something to be anxious about (when it's code)
+-   But if you do commit information that is sensitive this needs to be removed this needs to be treated as an incident or breach
+:::
+
+## Removing sensitive data from a repository
+
+It's a thing that every user of GitHub needs to consider and GitHub has [guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) but does refer to a [tool](https://rtyley.github.io/bfg-repo-cleaner/) that needs installing
+
+> If this isn't available to you it is still possible to purge a file and its commit history but as there are many different scenarios... [TiddlyWiki](http://sukima.github.io/GitFixUm/).
+
+is like a choose your own adventure.
+
+::: notes
+Acknowledge making a mistake is scary and not an adventure! There will be people to help though, through the NHS-R Community and people should definitely feel they can ask for help.
+:::
+
+## When in doubt - make it private
+
+You can change the visibility of a repository through the `Settings` tab in GitHub
+
+It's possible to move a public repository to private and back again any number of times
+
+## End session
+
+### Acknowledgements
+
+CDU Data Science Team blog [When things go wrong in GitHub](https://cdu-data-science-team.github.io/team-blog/posts/2022-11-09-when-things-go-wrong-in-github/)

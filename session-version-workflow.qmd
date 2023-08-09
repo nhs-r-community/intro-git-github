@@ -29,12 +29,12 @@ It's good to practice regular saving of files when you work - whatever the progr
 
 ## Not just for new material
 
-Have you ever commented out code that you want to delete but don't want to lose - just in case?
+Have you ever commented out code that you don't want to use but want to keep - just in case?
 
 :::incremental
 - Git allows things to be deleted and add a message as to why you did that
-- Roll backs are therefore available
-- And if you want to find the old code but not roll back - Git has that history
+- Roll backs are also available!
+- And if you want to find the old code but not roll back - Git has that history, it keeps everything
 :::
 
 ## Local and Remote
@@ -44,7 +44,7 @@ Once you have a snapshot stored locally (Git) you can **push** the snapshot to a
 This is like:
 
 ::: incremental
-- sending file updates by email
+- sending file updates by email and also
 - sharing on something like DropBox
 :::
 
@@ -52,7 +52,7 @@ This is like:
 
 The tendency for much of analysis work is to share once something is finished
 
-But **commits** (snapshots)
+But **commits** (snapshots):
 
 ::: incremental
 - allow others to contribute with your work in progress

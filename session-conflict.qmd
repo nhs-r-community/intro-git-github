@@ -19,82 +19,75 @@ embed-resources: true
 
 ## Conflicts!
 
-What happens if there are two branches being merged that have the same line of code changed?
+Conflicts can happen when you merge a branch and can occur when working with others, or even yourself!
 
 Let's create a conflict...
 
-```{r}
-usethis::pr_init("author_zoe")
+## Your Turn
+
+1.  `usethis::pr_init("author_change")`
+2.  Replace the author in the Quarto YAML with `author: Person A` and Render
+3.  `gert::git_commit_all("Added Person A as author")`
+4.  `usethis::pr_push()`
+5.  In GitHub create a pull request to `main` using `Merge pull request` and do the merge
+
+::: {.callout-warning collapse="false" appearance="default" icon="true"}
+## Not pulling from `main`
+
+We'll miss the `pr_finish()` part because this function reduces the possibility of conflict as it `pulls` changes made on `main`
+:::
+
+## Together we will...
+
+... create another branch in RStudio, not {usethis}, as we miss the steps that reduce conflicts:
+
+1.  Go to the `main` branch using the RStudio Git pane
+2.  Create a branch in that pane using the button next to `person-b`
+3.  Replace the author in the Quarto YAML with `author: Person B` and Render
+4.  Tick the box next to the file and commit using the Git pane in RStudio
+5.  Push the changes using RStudio Git pane (the button is not greyed out)
+6.  In GitHub create a pull request to `main` using `Merge pull request` and do the merge
+
+## Conflict in GitHub!
+
+![](img/github_conflict.PNG){fig-alt="Screenshot of GitHub merge conflict with the Resolve Conflict grey section of the Pull Request"}
+
+## Looking for the symbols
+
+To resolve the conflict we need to edit (in this case delete) one of the names and also delete all the merge text:
+
+``` markdown
+<<<<<< person-b
+=======
+>>>>>> main
 ```
+This can be done in GitHub and ends with a new commit. 
 
-Add to the quarto YAML `author: "Zoë Turner"` and Render
+## Seeing the conflict locally
 
-```{r}
-gert::git_commit_all("Added Zoë as author")
-usethis::pr_push()
-```
+To see the same conflicted files locally:
 
-In GitHub create a pull request to `main` using `Merge pull request`
-In RStudio 
+1. On the branch with the conflict (`person-b`)
+1. Go to the `Console` ($) and type `usethis::pr_merge_main()`
 
-```{r}
-usethis::pr_finish()
-```
+. . .
 
-## Repeat for your name!
-
-:::incremental
-- Repeat the steps but using your name for the branch name and in the YAML.
-- We'll get conflicts! They can be resolved in GitHub which is a friendly interface
-- Or in RStudio using `usethis::pr_merge_main()`
-
-```
+```markdown
+✔ Pushing local 'author_change' branch to 'origin/author_change'.
+• Create PR at link given below
+✔ Opening URL 'https://github.com/Letxuga007/project/compare/author_change'
+> usethis::pr_merge_main()
 ✔ Pulling changes from 'origin/main'.
 Merge has resulted in merge conflict(s).
-There are 2 conflicted files:
-* 'example_quarto.html'
-* 'example_quarto.qmd'
+There are 1 conflicted files:
+* 'my_report.qmd'
 Are you ready to sort this out?
 If so, we will open the conflicted files for you to edit.
 
 1: Yes, I'm ready to resolve the merge conflicts.
 2: No, I want to abort this merge.
 
-Selection: 1
-Error: Please fix each conflict, save, stage, and commit.
-To back out of this merge, run `gert::git_merge_abort()` (in R) or `git merge --abort` (in the shell).
+Selection: 
 ```
-:::
-
-## Looking for the symbols
-
-To resolve the conflict we need to edit (in this case delete) one of the names from `<<<<<<<` to `>>>>>>>` 
-
-`=======` will separate the options.
-
-Also delete all the merge text:
-
-```
-<<<<<<< HEAD
-=======
->>>>>>> 9641dcc94c1bf0005731032b040fd664f32949fc
-
-```
-Save the files 
-
-```{r}
-gert::git_add("name_of_file.qmd")
-gert::git_add("name_of_file.html")
-usethis::pr_push()
-```
-
-On GitHub there button to Merge pull request will be available as the merge conflict has been resolved
-
-Return to RStudio to use `pr_finish()` on the branch
-
-???
-`gert::git_commit_all("Chose name in conflict")` won't stage as they are not modified files 
 
 ## End session
-
-

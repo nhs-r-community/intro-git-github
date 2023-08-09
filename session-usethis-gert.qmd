@@ -2,7 +2,7 @@
 title: "Introduction to Git and GitHub"
 title-slide-attributes: 
   data-background-color: "#43464B"
-subtitle: "Session - {usethis} and {gert}"
+subtitle: "Session - Workflow with {usethis} and {gert}"
 author: "Zoë Turner"
 format:
   revealjs:
@@ -19,10 +19,10 @@ embed-resources: true
 
 ## Not the command line!
 
-* Many courses in Git refer to the Command line
-* This is under the `Terminal` tab in RStudio
-* There are many resources available for Git commands but perhaps the hardest part is the workflow
-* Which is where R packages can make things a little friendlier...
+-   Many courses in Git refer to the Command line
+-   This is under the `Terminal` tab in RStudio
+-   There are many resources available for Git commands but perhaps the hardest part is the workflow
+-   Which is where R packages can make things a little friendlier...
 
 ## Getting started
 
@@ -33,14 +33,23 @@ library(usethis)
 library(gert)
 ```
 
-The `Console` starts with `>` 
-The `Terminal` starts with `$`
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+## Terminal or Console?
+
+The `Console` starts with `>` and is for `R`\
+The `Terminal` starts with `$` and is for `git` but other things too like `quarto`
+:::
 
 ## Set up a project
 
-- On Posit Cloud the workspace _is_ a project!
-- [Setting up a project on your own computer](https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide)
-- The Files should have a file called `*.Rproj` if it's a project
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+## Remember!
+
+-   On Posit Cloud the workspace *is* a project!
+:::
+
+-   [Setting up a project on your own computer](https://nhs-r-community.github.io/intro-r-rstudio/session-projects.html#/title-slide)
+-   The Files should have a file called `*.Rproj` if it's a project
 
 ## Start new work
 
@@ -50,22 +59,24 @@ Rather than working on the `main` branch we need a copy called "new_work"
 usethis::pr_init("new_work")
 ```
 
-Next [create a quarto file](https://nhs-r-community.github.io/intro-r-rstudio/session-quarto.html#/title-slide), include a title and author, render and then save it.
+1.  Next [create a quarto file](https://intro-r-rstudio.nhsrcommunity.com/session-quarto.html#/open-a-new-quarto-file)
+2.  include a title and author
+3.  Render it (which will require you to also save it)
 
 ## Commit the new files
 
 In the Git pane three new items will have appeared
 
-- the `*.qmd` file
-- an `*.html` file from the rendered quarto
-- a folder for the corresponding html (because this isn't self-contained)
+-   the `*.qmd` file
+-   an `*.html` file from the rendered quarto
+-   a folder for the corresponding html (because this isn't self-contained)
 
 ## Making a quarto html self-contained
 
 Add to the YAML (the first few lines at the top)
 
 ```{r}
-#| code-line-numbers: "4"
+#| code-line-numbers: "5"
 title: "My report"
 author: "Zoë Turner"
 format: html
@@ -83,161 +94,83 @@ Individual new files can be `staged` with code or by ticking the box next to the
 gert:git_add("name_of_file.qmd")
 ```
 
+## Adding multiple files - first method
 
-## Adding multiple files 
-
-Using [RStudio](https://nhsrcommunity.com/rstudio-and-git-selecting-many-files/) can be done in the Git pane by clicking on the first file name (highlighting it) and the Shift and click the second file, then tick
-
-In the Terminal using code (the command line with `$` not `>` which is for R commands)
-
-```{bash}
-git add .
-```
-
-Refresh the Git pane using the circle arrow icon
+-   Using [RStudio](https://nhsrcommunity.com/rstudio-and-git-selecting-many-files/) can be done in the Git pane by clicking on the first file name (highlighting it)
+-   Then use `Shift` and click the second file to highlight down (or arrow down)
+-   Select one of the tick boxes and they all get selected
 
 ## Commit
 
 This records the changes with a message in Git
 
 ```{r}
-gert::git_commit(message = "First commit for quarot document")
+gert::git_commit(message = "First commit for quatro document")
 ```
+
+## Adding multiple files - second method
+
+Stage everything and do the commit message at the same time!
+
+```{r}
+gert::git_commit_all(message = "First commit for quatro document")
+```
+
+::: {.callout-warning collapse="false" appearance="default" icon="true"}
+## Watch out!
+
+This will only `stage` files that have already been "seen" as in committed.
+
+New files will get missed by this command.
+:::
 
 ## Oops mistake in the message!
 
-Let's correct that using a feature of RStudio
+Let's correct the misspelling of `quatro` to `quarto` using a feature of RStudio
 
-:::incremental
-- Click on the `Commit` button in the Git pane of RStudio (a pop up will appear)
-- Select the box `Amend previous commit` under the Commit message (starts off blank)
-- Correct `quarot` for `quarto` and then click the Commit button.
+::: incremental
+-   Click on the `Commit` button in the Git pane of RStudio (a pop up will appear)
+-   Select the box `Amend previous commit` under the Commit message (starts off blank)
+-   Correct `quarot` for `quarto` and then click the Commit button.
 :::
 
 ## Work in progress
 
 Committing frequently is beneficial but can create a lot of history (commits)
 
-:::incremental
-- A recommended way of working can be to commit with a message "WIP" and update the one commit
-- RStudio can be used to both change the message and add/delete files
+::: incremental
+-   A recommended way of working can be to commit with a message "WIP" and update the one commit
+-   RStudio can be used to both change the message and add/delete files
 :::
 
 ## Make a change as WIP
 
-- Change the title of the quarto document and save
-- Note the appearance of the file in the Git pane with an `M` icon next to it
-- Stage the file using `gert::git_add("name_of_file.qmd")` or tick in RStudio
-- A tick will appear against the file in the Git pane
-- Commit using the RStudio button and select `Amend previous commit`
+-   Change the title of the quarto document and save
+-   Note the appearance of the file in the Git pane with an `M` icon next to it
+-   Stage the file using `gert::git_add("name_of_file.qmd")` or tick in RStudio
+-   Commit using the RStudio button and select `Amend previous commit`
 
 ## Look at the history
 
-- In the Git pane of RStudio click on `History`
-- Show Diff will need to be selected as the files are new
-- Two links will appear for the `*.qmd` and `*.html`, click on the qmd file
-- You will see your most recent Title name and there is no reference to that because the commit was changed
+-   In the Git pane of RStudio click on `History`
+-   Show Diff will need to be selected as the files are new
+-   Two links will appear for the `*.qmd` and `*.html`, click on the qmd file
+-   You will see your most recent Title name and there is no reference to that because the commit was changed
 
 ## A scenario for use
 
-In building this course and the slides the content has changed a lot
-
-Slides were merged and split out into topics
-
-Version control was required overall but not every change needed to be logged
-
-## Make a change as a new commit
-
-- Remove the author of the quarto document, save and render
-- 2 files will appear in the Git pane for the changed documents with `M` next to them
-- Use `gert::git_commit_all("Removed author")` to commit multiple files to modify and add a message
-
-This command only works for files that are being modified not new files so if you have a mixture of both you will have to select new files separate to stage
-
-## Pushing to the remote (GitHub)
-
-We want to `push` the copy branch to GitHub, make a `pull request` to `merge` into main
-
-```{r}
-usethis::pr_push()
-```
-
-This open the pull request in GitHub/a browser
-
-## Extra unnecessary step?
-
-:::incremental
-- Creating a pull request to the main branch can see an extra step, particularly when you are working alone
-- But if you are working with others or the main is a *clean* working branch you need to protect it
-- Pull requests will be where your *merge conflicts* will be highlighted
+::: incremental
+-   In building this course and the slides the content has changed a lot!
+-   Slides were merged and split out into topics but the content wasn't always changed
+-   WIP on a branch shared on GitHub can show you are still working on this as it's good practice to never have a WIP commit on `main`
 :::
 
-## GitHub via pr_push()
+## Your turn!
 
-The `usethis::pr_push()` function will open up the pull request, click the `Create pull request`
-
-## GitHub Pull requests tab
-
-Or in Pull requests section of GitHub select the `Compare & pull request`
-
-![Screenshot of the pull request page in GitHub](img/pull_request_github.PNG)
-
-Either route will end with a green `Create pull request` button!
-
-## Options to merge - default
-
-There are three options the default being
-
-`Create a merge commit` creates a new `merge commit` which isn't very descriptive in the name 
-
-> Merge pull request #1 from Letxuga007/new_work
-
-but is recommended as an easier way to debug for when things get muddled
-
-## Squashing
-
-`Squash and merge` details multiple commits in one 
-
-
-> New work (#1) 
-> * First commit for quarto document
-> * Removed author
-
-which is a nice way to keep all the commit messages but messages can get long
-
-## Rebase
-
-`Rebase and merge` keeps all the commits as you created them in a linear way
-
-The history is more readable but can be tougher to resolve conflicts
-
-![Screenshot of the commits from a rebase merge](img/rebase_commit_history.PNG)
-
-::: {.notes}
-When to use merge versus rebase https://www.gitkraken.com/learn/git/problems/git-rebase-vs-merge
-
-Rebase seems to be incredibly useful if there are many people working on a project and can see the branches in a visual way. GitHub only presents commits in a linear way anyway so this may not be necessary for many analytical type repositories.
-:::
-
-## Finish with the pull request
-
-Back to RStudio and using 
-
-```{r}
-usethis::pr_finish()
-```
-
-Several things gets tidied up all in one function 
-
-## Local and remote branches
-
-Local and Remote branches are distinct things so although "new_work" has been deleted locally and on GitHub, it can still be see in RStudio under `REMOTE: ORIGIN` drop down (select the branch name)
-
-To tidy, this needs to be done in the Terminal (the following prunes all hanging branches)
-
-```{bash}
-git remote prune origin
-```
+-   Remove the author of the quarto document, save and Render
+-   Create a new Quarto presentation and save
+-   Use `gert::git_commit_all("Removed author and created slides")`
+-   Stage and commit either as a new commit or amend the last
 
 ## End session
 

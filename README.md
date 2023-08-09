@@ -22,11 +22,9 @@ development series.
   up](https://nhs-r-community.github.io/intro-git-github/session-setup.html#/title-slide) -
   Getting started with Git and GitHub
 
-## Break
+### Break
 
 [Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
-
-## Part 2
 
 - [Version
   Control](https://nhs-r-community.github.io/intro-git-github/session-version-control.html#/title-slide) -
@@ -34,20 +32,30 @@ development series.
   and downs of Git  
 - [Workflow](https://nhs-r-community.github.io/intro-git-github/session-version-workflow.html#/title-slide) -
   Brief introduction to the Git and GitHub terminology  
-- [Using R packages {usethis} and
+- [Workflow with {usethis} and
   {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) -
-  start work, make a commit and pull request  
+  start work and making a commit
+
+## Part 2
+
+- [Pull Requests
+  (PRs)](https://nhs-r-community.github.io/intro-git-github/session-pull-requests.html#/title-slide) -
+  making pull request, pausing, resuming and finishing  
 - [Merge
   conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) -
-  repeat steps from previous session and create a conflict merge  
+  repeat steps from previous session and create a conflict merge
+
+### Break
+
+[Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
+
 - [Commit to main (and undo last
   commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide)
 - [Undo last
   merge](https://intro-git-github.nhsrcommunity.com/session-undo-commit.html#/title-slide) -
   Working from existing repositories
 
-\[TODO\] session-fork-clone  
-session-pause-resume
+\[TODO\] session-fork-clone
 
 ## Appendix slides
 

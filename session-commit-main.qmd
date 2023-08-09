@@ -12,7 +12,7 @@ format:
     css: nhsr-quarto.scss
     preview-links: true
 execute: 
-  echo: false
+  echo: true
   eval: false
 embed-resources: true  
 ---
@@ -33,22 +33,31 @@ gert::git_commit("This is a message")
 
 ```
 
-and then use the `Push` button in the Git RStudio pane or in the Terminal ($)
+and then use the `Push` button in the Git RStudio pane 
 
-```{bash}
-git push
-```
+## Accidental commits!
 
-## Accidentally committed 
+If you commit by accident to any branch, but particularly `main`, you can undo the last commit
 
-If you commit by accident to any branch, but particularly main, you can undo the last commit
+In fact, you can undo any number of last commits!
 
-You can undo any number of last commits!
-
-This has to be done in the Terminal ($)
+This has to be done in the `Terminal` though ($)!
 
 ```{bash}
 git reset --soft HEAD~1
 ```
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## Resetting doesn't delete
+Be careful if you are trying to undo something sensitive, a reset is not a deletion
+:::
+
+## Moving changes from one branch to another
+
+What if you've made a few changes that you want to keep but committed to `main`?
+
+- In RStudio create a new branch (which will have all the changes)
+- Return to `main`
+- Use the `terminal` to reset the commits you don't want
 
 ## End session

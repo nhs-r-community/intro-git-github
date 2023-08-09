@@ -24,7 +24,7 @@ embed-resources: true
 -   To practice a few workflows scenarios (but not all)
 -   To reassure that mistakes will happen and that's a feature of Git
 - [Turn around your Git mistakes in 17 ways](https://dev.to/smitterhane/turn-around-your-git-mistakes-in-17-ways-2mn1)  
-Next line has **comes with a language warning!**
+The following **comes with a language warning!**
 - [Oh Shit, Git!?!](https://ohshitgit.com/) 
 :::
 
@@ -33,17 +33,26 @@ Next line has **comes with a language warning!**
 Chapter overview
 
 ::: {.fragment .fade-in}
-  
+Check prework set up and Introduction
 :::
+
+::: {.fragment .fade-in}
+Setting up
+:::
+
 ::: {.fragment .fade-in}
 --------- Break -----------  
 :::
+
 ::: {.fragment .fade-in}
- 
+Version Control
 :::
+
 ::: {.fragment .fade-in}
 
+Workflow
 :::
+
 ::: {.fragment .fade-in}
 --------- Course end -----------
 :::
@@ -54,35 +63,28 @@ Chapter overview
 Chapter overview
 
 ::: {.fragment .fade-in}
-
+Useing R packages {gert} and {usethis}
 :::
+
+::: {.fragment .fade-in}
+Merge conflict!
+:::
+
 ::: {.fragment .fade-in}
 --------- Break -----------
 :::
-::: {.fragment .fade-in}
-
-:::
-::: {.fragment .fade-in}
---------- Course end ---------
-:::
-
-## Agenda - session three (about 3.5 hours)
-
-Chapter overview
 
 ::: {.fragment .fade-in}
+Commit to main (and undo last commit!)
+:::
 
-:::
 ::: {.fragment .fade-in}
---------- Break -----------
+Undo last merge
 :::
-::: {.fragment .fade-in}
 
-:::
 ::: {.fragment .fade-in}
 --------- Course end ---------
 :::
-
 
 
 ## This is not a definitive course
