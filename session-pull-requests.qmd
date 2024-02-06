@@ -37,9 +37,8 @@ This open the pull request in GitHub/a browser, select the `Create Pull Request`
 
 ## Extra unnecessary step?
 
--   Creating a pull request to the `main` branch can be seen as an extra step, particularly when you are working alone
-
 ::: incremental
+-   Creating a pull request to the `main` branch can be seen as an extra step, particularly when you are working alone
 -   But if you are working with others or the main is a *clean* working branch you need to protect it
 -   Pull requests will be where your *merge conflicts* will be highlighted
 -   People can see you are working on things
