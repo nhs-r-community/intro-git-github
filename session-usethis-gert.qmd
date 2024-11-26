@@ -1,20 +1,6 @@
 ---
 title: "Introduction to Git and GitHub"
-title-slide-attributes: 
-  data-background-color: "#43464B"
 subtitle: "Session - Workflow with {usethis} and {gert}"
-author: "Zoë Turner"
-format:
-  revealjs:
-    theme: [default, nhsr-quarto.scss]
-    logo: https://raw.githubusercontent.com/nhs-r-community/assets/main/logo/nhsr-logo.svg
-    code-link: true
-    css: nhsr-quarto.scss
-    preview-links: true
-execute: 
-  echo: true
-  eval: false
-embed-resources: true  
 ---
 
 ## Not the command line!
