@@ -14,40 +14,40 @@ development series.
 
 ## Part 1
 
-- [Prework](https://nhs-r-community.github.io/intro-git-github/session-prework.html#/title-slide) -
+- [Prework](https://intro-git-github.nhsrcommunity.com/session-prework.html#/title-slide) -
   Get set up on a computer  
-- [Introduction](https://nhs-r-community.github.io/intro-git-github/session-intro.html#/title-slide) -
+- [Introduction](https://intro-git-github.nhsrcommunity.com/session-intro.html#/title-slide) -
   What is version control?  
 - [Setting
-  up](https://nhs-r-community.github.io/intro-git-github/session-setup.html#/title-slide) -
+  up](https://intro-git-github.nhsrcommunity.com/session-setup.html#/title-slide) -
   Getting started with Git and GitHub
 
 ### Break
 
-[Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
+[Break](https://intro-git-github.nhsrcommunity.com/session-break-slide.html#/title-slide)
 
 - [Version
-  Control](https://nhs-r-community.github.io/intro-git-github/session-version-control.html#/title-slide) -
+  Control](https://intro-git-github.nhsrcommunity.com/session-version-control.html#/title-slide) -
   What is Git/GitHub and how they relate to RStudio along with the ups
   and downs of Git  
-- [Workflow](https://nhs-r-community.github.io/intro-git-github/session-version-workflow.html#/title-slide) -
+- [Workflow](https://intro-git-github.nhsrcommunity.com/session-version-workflow.html#/title-slide) -
   Brief introduction to the Git and GitHub terminology  
 - [Workflow with {usethis} and
-  {gert}](https://nhs-r-community.github.io/intro-git-github/session-usethis-gert.html#/title-slide) -
+  {gert}](https://intro-git-github.nhsrcommunity.com/session-usethis-gert.html#/title-slide) -
   start work and making a commit
 
 ## Part 2
 
 - [Pull Requests
-  (PRs)](https://nhs-r-community.github.io/intro-git-github/session-pull-requests.html#/title-slide) -
+  (PRs)](https://intro-git-github.nhsrcommunity.com/session-pull-requests.html#/title-slide) -
   making pull request, pausing, resuming and finishing  
 - [Merge
-  conflict!](https://nhs-r-community.github.io/intro-git-github/session-conflict.html#/title-slide) -
+  conflict!](https://intro-git-github.nhsrcommunity.com/session-conflict.html#/title-slide) -
   repeat steps from previous session and create a conflict merge
 
 ### Break
 
-[Break](https://nhs-r-community.github.io/intro-git-github/session-break-slide.html#/title-slide)
+[Break](https://intro-git-github.nhsrcommunity.com/session-break-slide.html#/title-slide)
 
 - [Commit to main (and undo last
   commit!)](https://intro-git-github.nhsrcommunity.com/session-commit-main.html#/title-slide) -
@@ -62,5 +62,5 @@ development series.
 ## Appendix slides
 
 [{usethis}
-errors](https://nhs-r-community.github.io/intro-git-github/session-usethis-errors.html#/title-slide) -
+errors](https://intro-git-github.nhsrcommunity.com/session-usethis-errors.html#/title-slide) -
 typical errors from set up issues
